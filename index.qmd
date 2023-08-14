@@ -1,0 +1,122 @@
+---
+title: "Reproducible Workflow"
+date: December 18, 2023
+author: Jannik Buhr
+institute: Heidelberg Institute for Theoretical Studies
+format:
+  revealjs: 
+    # title-slide-attributes:
+    #   data-background-image: ./img/title.png
+    #   data-background-color: white
+    #   data-background-size: contain
+    #   data-background-position: bottom
+    citations-hover: true
+    reference-links: false
+    progress: true
+    slide-number: true
+    chalkboard: 
+      buttons: true
+    multiplex: false
+    # logo: ./img/hits-logo.png
+    theme: [default, theme.scss]
+    css: ./styles.css
+    footer: |
+      <https://jmbuhr.de>
+# favicon: ./img/logo.png
+bibliography: ./references.bib
+nocite: ""
+execute:
+  warning: false
+  eval: true
+  echo: false
+---
+
+# Warmup!
+
+## Remember these letters
+
+```{python}
+from random import randint
+from string import ascii_letters
+# from palmerpenguins import penguins
+```
+
+```{python}
+sentence = "How many of these letters did you remember?"
+
+letters = ""
+for c in sentence:
+  if c != " ":
+    c = ascii_letters[randint(0, 25)]
+      
+  letters += c
+
+print(letters)
+```
+
+<!-- TODO: add timmer -->
+
+## Remember these letters
+
+How many of these letters did you remember?
+
+## Remember these letters
+
+Do you remember the question on the previous slide?
+
+. . .
+
+Of course you do, it's just **one** sentence!
+
+. . .
+
+But it has the **same number of characters** as the random letters.
+
+## Thunks
+
+## Who am I?
+
+# Optimize Your Workflow
+
+## Keyboard Shortcuts are not just for Speed!
+
+# Optimize your Code
+
+## Code is communication
+
+## Put the fun in Functional Programming
+
+### Pure Functions
+
+```{python}
+def count_penguins_by_species_v1():
+  pass
+```
+
+
+```{python}
+def count_penguins_by_species_v2(data):
+  return {}
+```
+
+
+```{python}
+test_data = {
+
+}
+expected_result = {
+
+}
+assert count_penguins_by_species_v2(test_data) == expected_result
+```
+
+# Thank You!
+
+## Thank You!
+
+## References
+
+:::{#refs}
+:::
+
+
