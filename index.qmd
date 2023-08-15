@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Workflow"
+title: "Underrated Tricks for Reproducible Workflows"
 date: December 18, 2023
 author: Jannik Buhr
 institute: Heidelberg Institute for Theoretical Studies
@@ -29,6 +29,7 @@ execute:
   warning: false
   eval: true
   echo: false
+# engine: knitr
 ---
 
 # Warmup!
@@ -36,12 +37,11 @@ execute:
 ## Remember these letters
 
 ```{python}
+#| output: asis
+#| eval: false
 from random import randint
 from string import ascii_letters
 # from palmerpenguins import penguins
-```
-
-```{python}
 sentence = "How many of these letters did you remember?"
 
 letters = ""
@@ -50,11 +50,13 @@ for c in sentence:
     c = ascii_letters[randint(0, 25)]
       
   letters += c
-
-print(letters)
 ```
 
+xfw iadc na nvrqy bceawgj dcz lyh lwoovxxce
+
 <!-- TODO: add timmer -->
+
+## Remember these letters
 
 ## Remember these letters
 
@@ -80,6 +82,13 @@ But it has the **same number of characters** as the random letters.
 
 ## Keyboard Shortcuts are not just for Speed!
 
+Demo Time!
+
+## Demo
+
+Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+
+
 # Optimize your Code
 
 ## Code is communication
@@ -88,27 +97,6 @@ But it has the **same number of characters** as the random letters.
 
 ### Pure Functions
 
-```{python}
-def count_penguins_by_species_v1():
-  pass
-```
-
-
-```{python}
-def count_penguins_by_species_v2(data):
-  return {}
-```
-
-
-```{python}
-test_data = {
-
-}
-expected_result = {
-
-}
-assert count_penguins_by_species_v2(test_data) == expected_result
-```
 
 # Thank You!
 
