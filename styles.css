@@ -1,3 +1,18 @@
+#title-slide {
+  left: 30%;
+  text-align: left;
+}
+
+.reveal .quarto-title-block .quarto-title-authors {
+  display: block;
+}
+
+
+.reveal .quarto-title-block .quarto-title-authors .quarto-title-author {
+  padding: 0;
+}
+
+
 .datatables {
   font-size: medium;
 }
@@ -17,3 +32,54 @@
 .fr {
   float: right;
 }
+
+.center {
+  display: table;
+  margin: 0 auto;
+}
+
+#qr {
+  position: absolute;
+  bottom: 0;
+  right: 0
+}
+
+.profile {
+  position: absolute;
+  bottom: 0;
+}
+
+.profile ul {
+  list-style-type: none;
+}
+
+div.profile > ul {
+  margin-inline: auto;
+  display: flex;
+  width: 30%;
+  align-items: center; /* Align Items Vertically */
+  justify-content: space-between; /* Align Items Horizontally (with equal space in between each of them */
+}
+
+div.profile > ul > li {
+  margin: 0 5px;
+  padding: 0 5px;
+  font-size: 30px;
+}
+
+#jannik {
+  width: 30%;
+}
+
+#jannik > p > img {
+  border-radius: 50%;
+}
+
+#tool-logos {
+  width: 60%;
+  margin-inline: auto;
+  align-items: center;
+}
+
+
+

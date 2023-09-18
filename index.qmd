@@ -5,17 +5,23 @@ abstract: |
   This talk is all about workflows and tools.
   We will learn about `Quarto`, the next iteration of Rmarkdown
   and integrate it into our workflow.
-  TODO
-date: December 18, 2023
+  We will see the `targets` R package in action to help us
+  keep track of complicated analysis pipelines and produce
+  verifiably reproducible results.
+  Lastly, we will venture into uncharted territory to find
+  out first hand, why it always pays off to learn the intricacies
+  of your tools with a live demonstration of using `Quarto` and
+  `targets` in `Neovim`.
+date: December 19, 2023
 author: Jannik Buhr
 institute: Heidelberg Institute for Theoretical Studies
 format:
   revealjs: 
-    # title-slide-attributes:
-    #   data-background-image: ./img/title.png
+    title-slide-attributes:
+      data-background-image: ./img/hand-axe.png
     #   data-background-color: white
-    #   data-background-size: contain
-    #   data-background-position: bottom
+      data-background-size: contain
+      data-background-position: left
     auto-animate-unmatched: false
     code-copy: true
     citations-hover: true
@@ -25,11 +31,10 @@ format:
     chalkboard: 
       buttons: true
     multiplex: false
-    # logo: ./img/hits-logo.png
     theme: [default, theme.scss]
     css: ./styles.css
     footer: |
-      <https://jmbuhr.de>
+      <https://jmbuhr.de/2023-workflow>
 # favicon: ./img/logo.png
 bibliography: ./references.bib
 nocite: ""
@@ -44,10 +49,6 @@ engine: markdown
 # Welcome
 
 ::: {.notes}
-- otters with their favorite rock
-  - otters are smart
-  - humans are smarter, we can turn a rock into a better tool
-  - choose your rock, then make it better
 - juggling
   - demo time
   - one pin
@@ -60,7 +61,7 @@ engine: markdown
   - bigger concepts in one thunk free up resources
 :::
 
-## Otters have a favorite Rock
+## Otters have a favorite Rock 🪨
 
 :::: {layout="[1,1]"}
 ![](./img/otter-hello.png)
@@ -68,7 +69,8 @@ engine: markdown
 :::{#quote}
 ![](./img/otter-pound.png){#otter-pound}
 
-> "The mean number of **blows** necessary **to open a mussel** was **35.5** (range 6–88, sd 20.4). The **same stone** was frequently **retained** for several successive food items, [...]"
+> "The mean number of **blows** necessary **to open a mussel** was **35.5** (range 6–88, sd 20.4).\
+> The **same stone** was frequently **retained** for several successive food items, [...]"
 > 
 > --- @hallToolUsingBehaviorCalifornia1964
 :::
@@ -79,25 +81,24 @@ engine: markdown
 Image sources: <https://en.wikipedia.org/wiki/Tool_use_by_sea_otters>, <https://en.wikipedia.org/wiki/Tool_use_by_sea_otters>
 :::
 
-## Otters have a favorite Rock {auto-animate=true}
+## Otters have a favorite Rock 🪨
 
 > "Give me six hours to cut down a tree and I will spend the first four sharpening the axe."
 > 
 > --- Abraham Lincoln
 
-## Otters have a favorite Rock
+## Otters have a favorite Rock 🪨
 
 > "Give me six minutes to open a mussel and I will spend the first four finding the perfect rock."
 > 
 > --- ~~Abraham~~ Otterham Lincoln
 
-## Otters have a favorite Rock
+## Otters have a favorite Rock 🪨
 
-:::{#imagebox}
+
 ![](./img/pexels-anna-urlapova-2957058.jpg){.fl width=38%}
 
-![](./img/hand-axe.png){.fr width=38%}
-:::
+. . .
 
 :::{#textbox}
 **Humans** don't just **use** tools
@@ -105,13 +106,50 @@ Image sources: <https://en.wikipedia.org/wiki/Tool_use_by_sea_otters>, <https://
 We **shape** and **perfect** them.
 :::
 
+. . .
+
+![](./img/hand-axe.png){.fr width=38%}
+
+
 :::footer
-Image sources: <https://www.pexels.com/photo/person-holding-a-stone-2957058/> <https://en.wikipedia.org/wiki/Hand_axe>
+Image sources: <https://www.pexels.com/photo/person-holding-a-stone-2957058/>, <https://en.wikipedia.org/wiki/Hand_axe>
 :::
 
-## Otters have a favorite Rock {auto-animate=true}
+## Who am I? 🦦
 
-## Who am I?
+:::{#jannik .fr}
+![](./img/jannik.png)
+:::
+
+Hi, I'm Jannik!
+
+Computational Biochemist at HITS and Heidelberg University
+
+![](./img/helix-wide.png){width=60%}
+
+I love building and teaching tools.
+
+:::profile
+- \@jmbuhr
+- [](https://github.com/jmbuhr){.bi-github}
+- [](https://jmbuhr.de){.bi-house}
+- [](https://mastodon.online/@jmbuhr){.bi-mastodon}
+- [](https://www.youtube.com/@jmbuhr){.bi-youtube}
+- [](https://www.linkedin.com/in/jmbuhr/){.bi-linkedin}
+:::
+
+{{< qrcode https://github.com/jmbuhr.de/2023-workflow qr width=124 height=124 colorDark='#1E4287' >}}
+
+## The Tools Today 🧰
+
+::: {layout-ncol=3 #tool-logos}
+![](./img/targets.png)
+
+![](./img/Neovim-logo.svg)
+
+![](./img/quarto.png)
+:::
+
 
 # Warmup!
 
