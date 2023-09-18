@@ -1,5 +1,11 @@
 ---
-title: "Underrated Tricks for Reproducible Workflows"
+title: "Sharpening the Axe"
+subtitle: "Reproducible Data Analysis at the Speed of Thought"
+abstract: |
+  This talk is all about workflows and tools.
+  We will learn about `Quarto`, the next iteration of Rmarkdown
+  and integrate it into our workflow.
+  TODO
 date: December 18, 2023
 author: Jannik Buhr
 institute: Heidelberg Institute for Theoretical Studies
@@ -10,6 +16,8 @@ format:
     #   data-background-color: white
     #   data-background-size: contain
     #   data-background-position: bottom
+    auto-animate-unmatched: false
+    code-copy: true
     citations-hover: true
     reference-links: false
     progress: true
@@ -28,35 +36,92 @@ nocite: ""
 execute:
   warning: false
   eval: true
-  echo: false
+  echo: true
 # engine: knitr
+engine: markdown
 ---
+
+# Welcome
+
+::: {.notes}
+- otters with their favorite rock
+  - otters are smart
+  - humans are smarter, we can turn a rock into a better tool
+  - choose your rock, then make it better
+- juggling
+  - demo time
+  - one pin
+  - two pins
+  - three pins
+  - sports psychology: learning, overlearning
+- demo: remembering things
+  - random letters
+  - same number of characters, but words in a sentence
+  - bigger concepts in one thunk free up resources
+:::
+
+## Otters have a favorite Rock
+
+:::: {layout="[1,1]"}
+![](./img/otter-hello.png)
+
+:::{#quote}
+![](./img/otter-pound.png){#otter-pound}
+
+> "The mean number of **blows** necessary **to open a mussel** was **35.5** (range 6–88, sd 20.4). The **same stone** was frequently **retained** for several successive food items, [...]"
+> 
+> --- @hallToolUsingBehaviorCalifornia1964
+:::
+ 
+::::
+
+:::footer
+Image sources: <https://en.wikipedia.org/wiki/Tool_use_by_sea_otters>, <https://en.wikipedia.org/wiki/Tool_use_by_sea_otters>
+:::
+
+## Otters have a favorite Rock {auto-animate=true}
+
+> "Give me six hours to cut down a tree and I will spend the first four sharpening the axe."
+> 
+> --- Abraham Lincoln
+
+## Otters have a favorite Rock
+
+> "Give me six minutes to open a mussel and I will spend the first four finding the perfect rock."
+> 
+> --- ~~Abraham~~ Otterham Lincoln
+
+## Otters have a favorite Rock
+
+:::{#imagebox}
+![](./img/pexels-anna-urlapova-2957058.jpg){.fl width=38%}
+
+![](./img/hand-axe.png){.fr width=38%}
+:::
+
+:::{#textbox}
+**Humans** don't just **use** tools
+
+We **shape** and **perfect** them.
+:::
+
+:::footer
+Image sources: <https://www.pexels.com/photo/person-holding-a-stone-2957058/> <https://en.wikipedia.org/wiki/Hand_axe>
+:::
+
+## Otters have a favorite Rock {auto-animate=true}
+
+## Who am I?
 
 # Warmup!
 
 ## Remember these letters
 
-```{python}
-#| output: asis
-#| eval: false
-from random import randint
-from string import ascii_letters
-# from palmerpenguins import penguins
-sentence = "How many of these letters did you remember?"
-
-letters = ""
-for c in sentence:
-  if c != " ":
-    c = ascii_letters[randint(0, 25)]
-      
-  letters += c
+```{r}
+countdown::countdown(minutes = 0, seconds = 15)
 ```
 
 xfw iadc na nvrqy bceawgj dcz lyh lwoovxxce
-
-<!-- TODO: add timmer -->
-
-## Remember these letters
 
 ## Remember these letters
 
@@ -64,7 +129,15 @@ How many of these letters did you remember?
 
 ## Remember these letters
 
-Do you remember the question on the previous slide?
+The quick brown fox jumps over the lazy dog
+
+```{r}
+countdown::countdown(minutes = 0, seconds = 15)
+```
+
+## Remember these letters
+
+Do you remember the sentence on the previous slide?
 
 . . .
 
@@ -76,7 +149,6 @@ But it has the **same number of characters** as the random letters.
 
 ## Thunks
 
-## Who am I?
 
 # Optimize Your Workflow
 
@@ -106,5 +178,92 @@ Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labor
 
 :::{#refs}
 :::
+
+# Targets
+
+## Init
+
+```{r}
+library(targets)
+library(tidyverse)
+```
+
+```{r}
+#| eval: false
+tar_script()
+```
+
+```{r}
+#| eval: false
+tar_make()
+```
+
+```{r}
+tar_visnetwork(callr_arguments = list(show = FALSE))
+```
+
+## Work
+
+```{r}
+penguins <- tar_read(penguins)
+```
+
+```{r}
+penguins |>
+  DT::datatable()
+```
+
+## Work
+
+```{r}
+penguins <- tar_read(clean_penguins)
+```
+
+```{r}
+penguins |>
+  ggplot(aes(bill_length_cm, bill_depth_cm)) +
+  geom_point(aes(color = species)) +
+  theme_minimal()
+```
+
+## Work
+
+```{r}
+linear_model = lm(bill_length_cm ~ species, penguins)
+anova_model = aov(bill_length_cm ~ species + sex, penguins)
+summary(anova_model)
+anova_model
+TukeyHSD(anova_model)
+```
+
+## Work
+
+```{r}
+penguins |>
+  filter(species != "Adelie") |>
+  ggplot(aes(species, bill_length_cm, color = species, group = species)) +
+  geom_violin() +
+  ggbeeswarm::geom_quasirandom() +
+  theme_minimal() +
+  stat_summary(color = "black")
+```
+
+## Work
+
+```{r}
+penguins |>
+  filter(species != "Adelie") |>
+  (\(x) t.test(bill_length_cm ~ species, x))()
+```
+
+```{r}
+penguins |>
+  count(species, sex) |>
+  drop_na()
+```
+
+
+
+
 
 

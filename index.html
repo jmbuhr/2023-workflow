@@ -8,11 +8,11 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.299">
+  <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Jannik Buhr">
   <meta name="dcterms.date" content="2023-12-18">
-  <title>Underrated Tricks for Reproducible Workflows</title>
+  <title>Sharpening the Axe</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -50,7 +115,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="./styles.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -348,7 +413,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Underrated Tricks for Reproducible Workflows</h1>
+  <h1 class="title">Sharpening the Axe</h1>
+  <p class="subtitle">Reproducible Data Analysis at the Speed of Thought</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -364,25 +430,124 @@ Jannik Buhr
   <p class="date">2023-12-18</p>
 </section>
 <section>
+<section id="welcome" class="title-slide slide level1 center">
+<h1>Welcome</h1>
+<aside class="notes">
+<ul>
+<li>otters with their favorite rock
+<ul>
+<li>otters are smart</li>
+<li>humans are smarter, we can turn a rock into a better tool</li>
+<li>choose your rock, then make it better</li>
+</ul></li>
+<li>juggling
+<ul>
+<li>demo time</li>
+<li>one pin</li>
+<li>two pins</li>
+<li>three pins</li>
+<li>sports psychology: learning, overlearning</li>
+</ul></li>
+<li>demo: remembering things
+<ul>
+<li>random letters</li>
+<li>same number of characters, but words in a sentence</li>
+<li>bigger concepts in one thunk free up resources</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="otters-have-a-favorite-rock" class="slide level2">
+<h2>Otters have a favorite Rock</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="./img/otter-hello.png"></p>
+</div>
+<div id="quote" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="./img/otter-pound.png" id="otter-pound"></p>
+<blockquote>
+<p>“The mean number of <strong>blows</strong> necessary <strong>to open a mussel</strong> was <strong>35.5</strong> (range 6–88, sd 20.4). The <strong>same stone</strong> was frequently <strong>retained</strong> for several successive food items, […]”</p>
+<p>— <span class="citation" data-cites="hallToolUsingBehaviorCalifornia1964">Hall and Schaller (<a href="#/references" role="doc-biblioref" onclick="">1964</a>)</span></p>
+</blockquote>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Image sources: <a href="https://en.wikipedia.org/wiki/Tool_use_by_sea_otters" class="uri">https://en.wikipedia.org/wiki/Tool_use_by_sea_otters</a>, <a href="https://en.wikipedia.org/wiki/Tool_use_by_sea_otters" class="uri">https://en.wikipedia.org/wiki/Tool_use_by_sea_otters</a></p>
+</div>
+</section>
+<section id="otters-have-a-favorite-rock-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Otters have a favorite Rock</h2>
+<blockquote>
+<p>“Give me six hours to cut down a tree and I will spend the first four sharpening the axe.”</p>
+<p>— Abraham Lincoln</p>
+</blockquote>
+</section>
+<section id="otters-have-a-favorite-rock-2" class="slide level2">
+<h2>Otters have a favorite Rock</h2>
+<blockquote>
+<p>“Give me six minutes to open a mussel and I will spend the first four finding the perfect rock.”</p>
+<p>— <del>Abraham</del> Otterham Lincoln</p>
+</blockquote>
+</section>
+<section id="otters-have-a-favorite-rock-3" class="slide level2">
+<h2>Otters have a favorite Rock</h2>
+<div id="imagebox">
+<p><img data-src="./img/pexels-anna-urlapova-2957058.jpg" class="fl" style="width:38.0%"></p>
+<p><img data-src="./img/hand-axe.png" class="fr" style="width:38.0%"></p>
+</div>
+<div id="textbox">
+<p><strong>Humans</strong> don’t just <strong>use</strong> tools</p>
+<p>We <strong>shape</strong> and <strong>perfect</strong> them.</p>
+</div>
+<div class="footer">
+<p>Image sources: <a href="https://www.pexels.com/photo/person-holding-a-stone-2957058/" class="uri">https://www.pexels.com/photo/person-holding-a-stone-2957058/</a> <a href="https://en.wikipedia.org/wiki/Hand_axe" class="uri">https://en.wikipedia.org/wiki/Hand_axe</a></p>
+</div>
+</section>
+<section id="otters-have-a-favorite-rock-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Otters have a favorite Rock</h2>
+</section>
+<section id="who-am-i" class="slide level2">
+<h2>Who am I?</h2>
+</section></section>
+<section>
 <section id="warmup" class="title-slide slide level1 center">
 <h1>Warmup!</h1>
 
 </section>
 <section id="remember-these-letters" class="slide level2">
 <h2>Remember these letters</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>countdown::countdown(minutes = 0, seconds = 15)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>xfw iadc na nvrqy bceawgj dcz lyh lwoovxxce</p>
-<!-- TODO: add timmer -->
 </section>
 <section id="remember-these-letters-1" class="slide level2">
 <h2>Remember these letters</h2>
+<p>How many of these letters did you remember?</p>
 </section>
 <section id="remember-these-letters-2" class="slide level2">
 <h2>Remember these letters</h2>
-<p>How many of these letters did you remember?</p>
+<p>The quick brown fox jumps over the lazy dog</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>countdown::countdown(minutes = 0, seconds = 15)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="remember-these-letters-3" class="slide level2">
 <h2>Remember these letters</h2>
-<p>Do you remember the question on the previous slide?</p>
+<p>Do you remember the sentence on the previous slide?</p>
 <div class="fragment">
 <p>Of course you do, it’s just <strong>one</strong> sentence!</p>
 </div>
@@ -392,9 +557,6 @@ Jannik Buhr
 </section>
 <section id="thunks" class="slide level2">
 <h2>Thunks</h2>
-</section>
-<section id="who-am-i" class="slide level2">
-<h2>Who am I?</h2>
 </section></section>
 <section>
 <section id="optimize-your-workflow" class="title-slide slide level1 center">
@@ -403,6 +565,11 @@ Jannik Buhr
 </section>
 <section id="keyboard-shortcuts-are-not-just-for-speed" class="slide level2">
 <h2>Keyboard Shortcuts are not just for Speed!</h2>
+<p>Demo Time!</p>
+</section>
+<section id="demo" class="slide level2">
+<h2>Demo</h2>
+<p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
 </section></section>
 <section>
 <section id="optimize-your-code" class="title-slide slide level1 center">
@@ -426,9 +593,67 @@ Jannik Buhr
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
-<div id="refs" role="list">
-
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-hallToolUsingBehaviorCalifornia1964" class="csl-entry" role="listitem">
+Hall, K. R. L., and George B. Schaller. 1964. <span>“Tool-<span>Using Behavior</span> of the <span>California Sea Otter</span>.”</span> <em>Journal of Mammalogy</em> 45 (2): 287–98. <a href="https://doi.org/10.2307/1376994">https://doi.org/10.2307/1376994</a>.
 </div>
+</div>
+</section></section>
+<section>
+<section id="targets" class="title-slide slide level1 center">
+<h1>Targets</h1>
+
+</section>
+<section id="init" class="slide level2">
+<h2>Init</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>library(targets)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>library(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>#| eval: false</span>
+<span id="cb4-2"><a href="#cb4-2"></a>tar_script()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>#| eval: false</span>
+<span id="cb5-2"><a href="#cb5-2"></a>tar_make()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>tar_visnetwork(callr_arguments = list(show = FALSE))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="work" class="slide level2">
+<h2>Work</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>penguins &lt;- tar_read(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>penguins |&gt;</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  DT::datatable()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="work-1" class="slide level2">
+<h2>Work</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>penguins &lt;- tar_read(clean_penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>penguins |&gt;</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  ggplot(aes(bill_length_cm, bill_depth_cm)) +</span>
+<span id="cb10-3"><a href="#cb10-3"></a>  geom_point(aes(color = species)) +</span>
+<span id="cb10-4"><a href="#cb10-4"></a>  theme_minimal()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="work-2" class="slide level2">
+<h2>Work</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>linear_model = lm(bill_length_cm ~ species, penguins)</span>
+<span id="cb11-2"><a href="#cb11-2"></a>anova_model = aov(bill_length_cm ~ species + sex, penguins)</span>
+<span id="cb11-3"><a href="#cb11-3"></a>summary(anova_model)</span>
+<span id="cb11-4"><a href="#cb11-4"></a>anova_model</span>
+<span id="cb11-5"><a href="#cb11-5"></a>TukeyHSD(anova_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="work-3" class="slide level2">
+<h2>Work</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href="#cb12-1"></a>penguins |&gt;</span>
+<span id="cb12-2"><a href="#cb12-2"></a>  filter(species != "Adelie") |&gt;</span>
+<span id="cb12-3"><a href="#cb12-3"></a>  ggplot(aes(species, bill_length_cm, color = species, group = species)) +</span>
+<span id="cb12-4"><a href="#cb12-4"></a>  geom_violin() +</span>
+<span id="cb12-5"><a href="#cb12-5"></a>  ggbeeswarm::geom_quasirandom() +</span>
+<span id="cb12-6"><a href="#cb12-6"></a>  theme_minimal() +</span>
+<span id="cb12-7"><a href="#cb12-7"></a>  stat_summary(color = "black")</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="work-4" class="slide level2">
+<h2>Work</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href="#cb13-1"></a>penguins |&gt;</span>
+<span id="cb13-2"><a href="#cb13-2"></a>  filter(species != "Adelie") |&gt;</span>
+<span id="cb13-3"><a href="#cb13-3"></a>  (\(x) t.test(bill_length_cm ~ species, x))()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href="#cb14-1"></a>penguins |&gt;</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  count(species, sex) |&gt;</span>
+<span id="cb14-3"><a href="#cb14-3"></a>  drop_na()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer footer-default">
 <p><a href="https://jmbuhr.de" class="uri">https://jmbuhr.de</a></p>
 </div>
@@ -464,7 +689,7 @@ Jannik Buhr
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
+'autoAnimateUnmatched': false,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
 'smaller': false,

@@ -1,0 +1,19 @@
+.datatables {
+  font-size: medium;
+}
+
+#otter-pound {
+  width: 80%;
+}
+
+#textbox {
+  position: absolute;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
