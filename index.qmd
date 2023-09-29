@@ -337,26 +337,6 @@ without side effects.
 
 **Free up resources** for the important questions.
 
-```{r}
-#| eval: false
-#| echo: true
-
-df <- data.frame(
-  x = 1:10,
-  y = 1:10
-)
-
-substract <- function(x, y) {
-  x - y
-}
-
-add = function(x, y) {
-  x + y
-}
-```
-
-
-
 # Demo
 
 Demo Time!
