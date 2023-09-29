@@ -85,4 +85,11 @@ div.profile > ul > li {
   font-size: 1.5em;
 }
 
+#tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+}
+
 

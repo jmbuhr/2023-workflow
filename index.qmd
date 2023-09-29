@@ -17,9 +17,9 @@ author: Jannik Buhr
 institute: Heidelberg Institute for Theoretical Studies
 format:
   revealjs: 
+    # embed-resources: false
     title-slide-attributes:
       data-background-image: ./img/hand-axe.png
-    #   data-background-color: white
       data-background-size: contain
       data-background-position: left
     auto-animate-unmatched: false
@@ -31,35 +31,27 @@ format:
     chalkboard: 
       buttons: true
     multiplex: false
+    preview-links: auto
     theme: [default, theme.scss]
     css: ./styles.css
     footer: |
       <https://jmbuhr.de/2023-workflow>
-# favicon: ./img/logo.png
 bibliography: ./references.bib
 nocite: ""
 execute:
   warning: false
   eval: true
   echo: true
-# engine: knitr
-engine: markdown
+engine: knitr
 ---
 
 # Welcome
 
-::: {.notes}
-- juggling
-  - demo time
-  - one pin
-  - two pins
-  - three pins
-  - sports psychology: learning, overlearning
-- demo: remembering things
-  - random letters
-  - same number of characters, but words in a sentence
-  - bigger concepts in one thunk free up resources
-:::
+<html>
+  <script>
+  document.head.appendChild(Object.assign(document.createElement("link"), {rel: "icon", href: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦦</text></svg>"}))
+  </script>
+</html>
 
 ## Otters have a favorite Rock 🪨
 
@@ -163,7 +155,7 @@ Next iteration of `Rmarkdown`.
 
 ### Targets
 
-<https://books.ropensci.org/targets/>
+<https://docs.ropensci.org/targets/>
 
 R package for reproducible workflows.
 
@@ -207,15 +199,17 @@ Of course you do, it's just **one** sentence!
 
 . . .
 
-But it has the **same number of characters** as the random letters.
+But it has the **same number of letters** as the random letters.
 
-## The Magic 7 $+/-$ 2
+## The Magic 7 ± 2
 
-One piece of information is a **thunk**.
+[@millerMagicalNumberSeven1956a]
+
+One piece of information is a **chunk**.
 
 . . . 
 
-We can keep **7 thunks** in our **working memory**
+We can keep **7 chunks** in our **working memory**
 
 . . .
 
@@ -225,12 +219,143 @@ We gain space by combining thoughts and **concepts**
 
 5 letters → 1 word
 
+. . .
 
+Words → sentence
 
+. . .
+
+Sentences → idea
 
 # Optimize Your Workflow
 
-## Keyboard Shortcuts are not just for Speed!
+## Quarto: Structure Thoughts
+
+:::{#tr}
+![](./img/quarto.png)
+:::
+
+<https://quarto.org/>
+
+An open-source scientific and technical publishing system.
+
+- The successor of `Rmarkdown`, made by the same people
+- Keep **thoughts, code and results** close
+- Cater to different **output formats**
+  - web, pdf, docx, ppt ...
+- Fully **reproducible**
+
+## {background-image="./img/rstudio.png" background-size=contain}
+
+##   {background-image="./img/choose.png" background-size=70% background-position=top}
+
+| 
+| 
+| 
+| 
+
+`qmd` files are just plain text!
+
+````
+---
+title: "quarto demo"
+format: 
+  html:
+    code-fold: true
+---
+
+## Air Quality
+
+@fig-airquality further explores the impact of temperature on ozone level.
+
+```{{r}}
+#| label: fig-airquality
+#| fig-cap: "Temperature and ozone level."
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess"
+)
+```
+````
+
+## Quarto: Structure Thoughts
+
+:::{#tr}
+![](./img/quarto.png)
+:::
+
+### Why?
+
+- Why did I perform this operation?
+  - Read a **detailed explanation** of past-me right next to the code!
+- Every journal has different formats
+  - Just let quarto **generate** them for you!
+- Could you increase the fontsize in all your plots?
+  - Sure, just **change** one number and **re-render**!
+
+### FQA:
+
+> "I have a machine learning model that takes 6 hours to calculate. How do I put this in a notebook?"
+
+Well, **don't!**
+
+## Targets: Organize Workflows
+
+:::{#tr}
+![](./img/targets.png){width=60%}
+:::
+
+<https://docs.ropensci.org/targets/>
+
+Function-oriented Make-like **declarative workflows** for R.
+
+```{r}
+#| echo: false
+#| out-width: 90%
+targets::tar_visnetwork()
+```
+
+Aim for **pure functions** that take **inputs** and produce **outputs**
+without side effects.
+
+## NeoVim: Not just for Speed!
+
+![](./img/nvim-clean.png)
+
+## NeoVim: Not just for Speed!
+
+![](./img/nvim-quarto.png)
+
+## NeoVim: Not just for Speed!
+
+**Modal editing** allows us to **communicate** with the editor.
+
+**Complicated operations** become one **chunk**.
+
+**Free up resources** for the important questions.
+
+```{r}
+#| eval: false
+#| echo: true
+
+df <- data.frame(
+  x = 1:10,
+  y = 1:10
+)
+
+substract <- function(x, y) {
+  x - y
+}
+
+add = function(x, y) {
+  x + y
+}
+```
+
+
 
 # Demo
 
