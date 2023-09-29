@@ -101,7 +101,7 @@ Image sources: <https://en.wikipedia.org/wiki/Tool_use_by_sea_otters>, <https://
 . . .
 
 :::{#textbox}
-**Humans** don't just **use** tools
+**Humans** don't just **use** tools.
 
 We **shape** and **perfect** them.
 :::
@@ -123,11 +123,14 @@ Image sources: <https://www.pexels.com/photo/person-holding-a-stone-2957058/>, <
 
 Hi, I'm Jannik!
 
-Computational Biochemist at HITS and Heidelberg University
+Computational Biochemist at\
+HITS and Heidelberg University
+
+I use **Quantum Mechanical Simulations** to study how **Collagen** breaks under force
 
 ![](./img/helix-wide.png){width=60%}
 
-I love building and teaching tools.
+I love building and teaching tools 🧰
 
 :::profile
 - \@jmbuhr
@@ -142,36 +145,57 @@ I love building and teaching tools.
 
 ## The Tools Today 🧰
 
-::: {layout-ncol=3 #tool-logos}
-![](./img/targets.png)
 
-![](./img/Neovim-logo.svg)
+::: {.columns}
+::: {.column width="30%"}
+![](./img/quarto.png){width=100%}
 
-![](./img/quarto.png)
+![](./img/targets.png){width=80%}
+
+![](./img/Neovim-logo.svg){width=100%}
 :::
+::: {.column width="70%"}
+### Quarto
 
+<https://quarto.org/>
+
+Next iteration of `Rmarkdown`.
+
+### Targets
+
+<https://books.ropensci.org/targets/>
+
+R package for reproducible workflows.
+
+### Neovim
+
+<https://neovim.io/>
+
+hyperextensible Vim-based text editor
+:::
+:::
 
 # Warmup!
 
 ## Remember these letters
 
 ```{r}
-countdown::countdown(minutes = 0, seconds = 15)
+countdown::countdown(minutes = 0, seconds = 7)
 ```
 
-xfw iadc na nvrqy bceawgj dcz lyh lwoovxxce
+[xfwiadcnanvrqybceawgjdczlyhlwoovxxce]{#letters}
 
 ## Remember these letters
 
-How many of these letters did you remember?
+How many of these letters do you remember?
 
 ## Remember these letters
-
-The quick brown fox jumps over the lazy dog
 
 ```{r}
-countdown::countdown(minutes = 0, seconds = 15)
+countdown::countdown(minutes = 0, seconds = 7)
 ```
+
+[The quick brown fox jumps over the lazy dog]{#letters}
 
 ## Remember these letters
 
@@ -185,28 +209,55 @@ Of course you do, it's just **one** sentence!
 
 But it has the **same number of characters** as the random letters.
 
-## Thunks
+## The Magic 7 $+/-$ 2
+
+One piece of information is a **thunk**.
+
+. . . 
+
+We can keep **7 thunks** in our **working memory**
+
+. . .
+
+We gain space by combining thoughts and **concepts**
+
+. . .
+
+5 letters → 1 word
+
+
 
 
 # Optimize Your Workflow
 
 ## Keyboard Shortcuts are not just for Speed!
 
+# Demo
+
 Demo Time!
 
-## Demo
+## Penguins!
 
-Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+![](./img/lter_penguins.png)
+
+::: {.aside}
+Artwork by \@allisonhorst
+:::
 
 
-# Optimize your Code
+# Take Home Messages
 
-## Code is communication
+## Take Home Messages
 
-## Put the fun in Functional Programming
+Keyboard shortcuts are for thoughts ⌨️\
 
-### Pure Functions
+Reproducibility and Interactivity can go hand in hand ▶️
 
+. . .
+
+Find your favorite rock 🪨
+
+Sharpen the axe 🪓
 
 # Thank You!
 
@@ -216,92 +267,3 @@ Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labor
 
 :::{#refs}
 :::
-
-# Targets
-
-## Init
-
-```{r}
-library(targets)
-library(tidyverse)
-```
-
-```{r}
-#| eval: false
-tar_script()
-```
-
-```{r}
-#| eval: false
-tar_make()
-```
-
-```{r}
-tar_visnetwork(callr_arguments = list(show = FALSE))
-```
-
-## Work
-
-```{r}
-penguins <- tar_read(penguins)
-```
-
-```{r}
-penguins |>
-  DT::datatable()
-```
-
-## Work
-
-```{r}
-penguins <- tar_read(clean_penguins)
-```
-
-```{r}
-penguins |>
-  ggplot(aes(bill_length_cm, bill_depth_cm)) +
-  geom_point(aes(color = species)) +
-  theme_minimal()
-```
-
-## Work
-
-```{r}
-linear_model = lm(bill_length_cm ~ species, penguins)
-anova_model = aov(bill_length_cm ~ species + sex, penguins)
-summary(anova_model)
-anova_model
-TukeyHSD(anova_model)
-```
-
-## Work
-
-```{r}
-penguins |>
-  filter(species != "Adelie") |>
-  ggplot(aes(species, bill_length_cm, color = species, group = species)) +
-  geom_violin() +
-  ggbeeswarm::geom_quasirandom() +
-  theme_minimal() +
-  stat_summary(color = "black")
-```
-
-## Work
-
-```{r}
-penguins |>
-  filter(species != "Adelie") |>
-  (\(x) t.test(bill_length_cm ~ species, x))()
-```
-
-```{r}
-penguins |>
-  count(species, sex) |>
-  drop_na()
-```
-
-
-
-
-
-

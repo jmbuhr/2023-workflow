@@ -1,0 +1,90 @@
+
+
+# Targets
+
+## Init
+
+```{r}
+library(targets)
+library(tidyverse)
+```
+
+```{r}
+#| eval: false
+tar_script()
+```
+
+```{r}
+#| eval: false
+tar_make()
+```
+
+```{r}
+tar_visnetwork(callr_arguments = list(show = FALSE))
+```
+
+## Work
+
+```{r}
+penguins <- tar_read(penguins)
+```
+
+```{r}
+penguins |>
+  DT::datatable()
+```
+
+## Work
+
+```{r}
+penguins <- tar_read(clean_penguins)
+```
+
+```{r}
+penguins |>
+  ggplot(aes(bill_length_cm, bill_depth_cm)) +
+  geom_point(aes(color = species)) +
+  theme_minimal()
+```
+
+## Work
+
+```{r}
+linear_model = lm(bill_length_cm ~ species, penguins)
+anova_model = aov(bill_length_cm ~ species + sex, penguins)
+summary(anova_model)
+anova_model
+TukeyHSD(anova_model)
+```
+
+## Work
+
+```{r}
+penguins |>
+  filter(species != "Adelie") |>
+  ggplot(aes(species, bill_length_cm, color = species, group = species)) +
+  geom_violin() +
+  ggbeeswarm::geom_quasirandom() +
+  theme_minimal() +
+  stat_summary(color = "black")
+```
+
+## Work
+
+```{r}
+penguins |>
+  filter(species != "Adelie") |>
+  (\(x) t.test(bill_length_cm ~ species, x))()
+```
+
+```{r}
+penguins |>
+  count(species, sex) |>
+  drop_na()
+```
+
+
+
+
+
+
