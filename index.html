@@ -408,12 +408,6 @@
       margin-right: 0; 
     }
   </style>
-  <link href="index_files/libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="index_files/libs/countdown-0.4.0/countdown.js"></script>
-  <script src="index_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-  <link href="index_files/libs/vis-9.1.0/vis-network.min.css" rel="stylesheet">
-  <script src="index_files/libs/vis-9.1.0/vis-network.min.js"></script>
-  <script src="index_files/libs/visNetwork-binding-2.1.2/visNetwork.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -439,6 +433,9 @@ Jannik Buhr
 <section>
 <section id="welcome" class="title-slide slide level1 center">
 <h1>Welcome</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>#| echo: false</span>
+<span id="cb1-2"><a href="#cb1-2"></a>library(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>library(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <script>
   document.head.appendChild(Object.assign(document.createElement("link"), {rel: "icon", href: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦦</text></svg>"}))
@@ -524,7 +521,7 @@ HITS and Heidelberg University</p>
 </div>
 <div id="qr" class="qrcode"></div>
 <script type="text/javascript">
-var qrcode = new QRCode("qr", {"text":"https://github.com/jmbuhr.de/2023-workflow","width":"124","colorLight":"#ffffff","colorDark":"#1E4287","height":"124"});
+var qrcode = new QRCode("qr", {"colorDark":"#1E4287","text":"https://github.com/jmbuhr.de/2023-workflow","height":"124","colorLight":"#ffffff","width":"124"});
 </script>
     
 </section>
@@ -555,15 +552,7 @@ var qrcode = new QRCode("qr", {"text":"https://github.com/jmbuhr.de/2023-workflo
 </section>
 <section id="remember-these-letters" class="slide level2">
 <h2>Remember these letters</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>countdown<span class="sc">::</span><span class="fu">countdown</span>(<span class="at">minutes =</span> <span class="dv">0</span>, <span class="at">seconds =</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="countdown" id="timer_ccd0818c" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">07</span></code>
-</div>
-</div>
-</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>countdown::countdown(minutes = 0, seconds = 7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span id="letters">xfwiadcnanvrqybceawgjdczlyhlwoovxxce</span></p>
 </section>
 <section id="remember-these-letters-1" class="slide level2">
@@ -572,15 +561,7 @@ var qrcode = new QRCode("qr", {"text":"https://github.com/jmbuhr.de/2023-workflo
 </section>
 <section id="remember-these-letters-2" class="slide level2">
 <h2>Remember these letters</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>countdown<span class="sc">::</span><span class="fu">countdown</span>(<span class="at">minutes =</span> <span class="dv">0</span>, <span class="at">seconds =</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="countdown" id="timer_937d16e2" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">07</span></code>
-</div>
-</div>
-</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>countdown::countdown(minutes = 0, seconds = 7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span id="letters">The quick brown fox jumps over the lazy dog</span></p>
 </section>
 <section id="remember-these-letters-3" class="slide level2">
@@ -595,22 +576,15 @@ var qrcode = new QRCode("qr", {"text":"https://github.com/jmbuhr.de/2023-workflo
 </section>
 <section id="the-magic-7-2" class="slide level2">
 <h2>The Magic 7 ± 2</h2>
-<p><span class="citation" data-cites="millerMagicalNumberSeven1956a">(<a href="#/references" role="doc-biblioref" onclick="">Miller 1956</a>)</span></p>
-<p>One piece of information is a <strong>chunk</strong>.</p>
-<div class="fragment">
-<p>We can keep <strong>7 chunks</strong> in our <strong>working memory</strong></p>
-</div>
-<div class="fragment">
-<p>We gain space by combining thoughts and <strong>concepts</strong></p>
-</div>
-<div class="fragment">
-<p>5 letters → 1 word</p>
-</div>
-<div class="fragment">
-<p>Words → sentence</p>
-</div>
-<div class="fragment">
-<p>Sentences → idea</p>
+<div>
+<ul>
+<li class="fragment">One piece of information is a <strong>chunk</strong>.</li>
+<li class="fragment">We can keep <strong>7 chunks</strong> in our <strong>working memory</strong> <span class="citation" data-cites="millerMagicalNumberSeven1956a">(<a href="#/references" role="doc-biblioref" onclick="">Miller 1956</a>)</span>.</li>
+<li class="fragment">We gain space by combining thoughts and <strong>concepts</strong></li>
+<li class="fragment">Letters → 1 word</li>
+<li class="fragment">Words → sentence</li>
+<li class="fragment">Sentences → idea</li>
+</ul>
 </div>
 </section></section>
 <section>
@@ -645,28 +619,28 @@ var qrcode = new QRCode("qr", {"text":"https://github.com/jmbuhr.de/2023-workflo
 <br>
 </p>
 <p><code>qmd</code> files are just plain text!</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "quarto demo"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Air Quality</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>@fig-airquality further explores the impact of temperature on ozone level.</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-airquality</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Temperature and ozone level."</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "quarto demo"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Air Quality</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>@fig-airquality further explores the impact of temperature on ozone level.</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-airquality</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Temperature and ozone level."</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="quarto-structure-thoughts-1" class="slide level2">
 <h2>Quarto: Structure Thoughts</h2>
@@ -688,9 +662,9 @@ var qrcode = new QRCode("qr", {"text":"https://github.com/jmbuhr.de/2023-workflo
 <li>Sure, just <strong>change</strong> one number and <strong>re-render</strong>!</li>
 </ul></li>
 </ul>
-<h3 id="fqa">FQA:</h3>
+<h3 id="faq">FAQ:</h3>
 <blockquote>
-<p>“I have a machine learning model that takes 6 hours to calculate. How do I put this in a notebook?”</p>
+<p>“I have a machine learning model that takes 6 hours to calculate. In a jupyter notebook it is simply cached, how do I put this in a Quarto notebook?”</p>
 </blockquote>
 <p>Well, <strong>don’t!</strong></p>
 </section>
@@ -701,13 +675,60 @@ var qrcode = new QRCode("qr", {"text":"https://github.com/jmbuhr.de/2023-workflo
 </div>
 <p><a href="https://docs.ropensci.org/targets/" class="uri">https://docs.ropensci.org/targets/</a></p>
 <p>Function-oriented Make-like <strong>declarative workflows</strong> for R.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>#| echo: false</span>
+<span id="cb5-2"><a href="#cb5-2"></a>#| out-width: 90%</span>
+<span id="cb5-3"><a href="#cb5-3"></a>targets::tar_visnetwork()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aim for <strong>pure functions</strong> that take <strong>inputs</strong> and produce <strong>outputs</strong> without side effects.</p>
+</section>
+<section id="aside-pure-functions" class="slide level2">
+<h2>Aside: Pure Functions</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="visNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-cd8bba4d686fc222e194" style="width:90%;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-cd8bba4d686fc222e194">{"x":{"nodes":{"name":["clean_penguins","penguins","clean_data"],"type":["stem","stem","function"],"status":["uptodate","uptodate","uptodate"],"seconds":[0.024,0.004,null],"bytes":[3116,2917,null],"branches":[null,null,null],"label":["clean_penguins","penguins","clean_data"],"color":["#354823","#354823","#354823"],"id":["clean_penguins","penguins","clean_data"],"level":[2,1,1],"shape":["dot","dot","triangle"]},"edges":{"from":["clean_data","penguins"],"to":["clean_penguins","clean_penguins"],"arrows":["to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"interaction":{"zoomSpeed":1},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem","Function"],"color":["#354823","#899DA4","#899DA4"],"shape":["dot","dot","triangle"]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
+<div>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 199.68 81.01" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 77.01)">
+<title>
+functions
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-77.01 195.68,-77.01 195.68,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="18.01" cy="-18.01" rx="18.02" ry="18.02"></ellipse> <text text-anchor="middle" x="18.01" y="-13.81" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="94.68" cy="-55.01" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="94.68" y="-50.81" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&gt;B --> <g id="edge1" class="edge">
+<title>
+A-&gt;B
+</title>
+<path fill="none" stroke="black" d="M34.48,-25.68C44.49,-30.64 57.75,-37.2 69.17,-42.87"></path> <polygon fill="black" stroke="black" points="67.72,-46.05 78.23,-47.35 70.82,-39.78 67.72,-46.05"></polygon> <text text-anchor="middle" x="56.35" y="-41.21" font-family="Times,serif" font-size="14.00">f</text> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="173.68" cy="-18.01" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="173.68" y="-13.81" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- A&#45;&gt;C --> <g id="edge3" class="edge">
+<title>
+A-&gt;C
+</title>
+<path fill="none" stroke="black" d="M36.12,-15.46C47.57,-13.88 63,-12.01 76.68,-11.21 92.66,-10.27 96.71,-10.31 112.68,-11.21 123.48,-11.82 135.32,-13.04 145.61,-14.29"></path> <polygon fill="black" stroke="black" points="145.3,-17.77 155.66,-15.56 146.18,-10.83 145.3,-17.77"></polygon> <text text-anchor="middle" x="94.68" y="-16.21" font-family="Times,serif" font-size="14.00">h</text> </g> <!-- B&#45;&gt;C --> <g id="edge2" class="edge">
+<title>
+B-&gt;C
+</title>
+<path fill="none" stroke="black" d="M111.27,-47.52C121.81,-42.46 135.95,-35.66 148.01,-29.87"></path> <polygon fill="black" stroke="black" points="149.63,-32.97 157.12,-25.49 146.59,-26.66 149.63,-32.97"></polygon> <text text-anchor="middle" x="134.18" y="-41.21" font-family="Times,serif" font-size="14.00">g</text> </g> </g>
+</svg>
 </div>
 </div>
-<p>Aim for <strong>pure functions</strong> that take <strong>inputs</strong> and produce <strong>outputs</strong> without side effects.</p>
+</div>
+</div>
+<p><span class="math display">\[
+g \circ f = h
+\]</span></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>#| eval: false</span>
+<span id="cb6-2"><a href="#cb6-2"></a>f = function(data) {</span>
+<span id="cb6-3"><a href="#cb6-3"></a>  data |&gt;</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    filter()</span>
+<span id="cb6-5"><a href="#cb6-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="neovim-not-just-for-speed" class="slide level2">
 <h2>NeoVim: Not just for Speed!</h2>
@@ -722,20 +743,6 @@ var qrcode = new QRCode("qr", {"text":"https://github.com/jmbuhr.de/2023-workflo
 <p><strong>Modal editing</strong> allows us to <strong>communicate</strong> with the editor.</p>
 <p><strong>Complicated operations</strong> become one <strong>chunk</strong>.</p>
 <p><strong>Free up resources</strong> for the important questions.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>)</span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a>substract <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
-<span id="cb4-7"><a href="#cb4-7"></a>  x <span class="sc">-</span> y</span>
-<span id="cb4-8"><a href="#cb4-8"></a>}</span>
-<span id="cb4-9"><a href="#cb4-9"></a></span>
-<span id="cb4-10"><a href="#cb4-10"></a>add <span class="ot">=</span> <span class="cf">function</span>(x, y) {</span>
-<span id="cb4-11"><a href="#cb4-11"></a>  x <span class="sc">+</span> y</span>
-<span id="cb4-12"><a href="#cb4-12"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section></section>
 <section>
 <section id="demo" class="title-slide slide level1 center">
@@ -999,44 +1006,6 @@ Miller, George A. 1956. <span>“The Magical Number Seven, Plus or Minus Two: <s
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

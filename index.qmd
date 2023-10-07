@@ -42,10 +42,16 @@ execute:
   warning: false
   eval: true
   echo: true
-engine: knitr
+engine: markdown
 ---
 
 # Welcome
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+```
 
 <html>
   <script>
@@ -203,29 +209,14 @@ But it has the **same number of letters** as the random letters.
 
 ## The Magic 7 ± 2
 
-[@millerMagicalNumberSeven1956a]
-
-One piece of information is a **chunk**.
-
-. . . 
-
-We can keep **7 chunks** in our **working memory**
-
-. . .
-
-We gain space by combining thoughts and **concepts**
-
-. . .
-
-5 letters → 1 word
-
-. . .
-
-Words → sentence
-
-. . .
-
-Sentences → idea
+::: {.incremental}
+- One piece of information is a **chunk**.
+- We can keep **7 chunks** in our **working memory** [@millerMagicalNumberSeven1956a].
+- We gain space by combining thoughts and **concepts**
+- Letters → 1 word
+- Words → sentence
+- Sentences → idea
+:::
 
 # Optimize Your Workflow
 
@@ -296,9 +287,9 @@ ggplot(airquality, aes(Temp, Ozone)) +
 - Could you increase the fontsize in all your plots?
   - Sure, just **change** one number and **re-render**!
 
-### FQA:
+### FAQ:
 
-> "I have a machine learning model that takes 6 hours to calculate. How do I put this in a notebook?"
+> "I have a machine learning model that takes 6 hours to calculate. In a jupyter notebook it is simply cached, how do I put this in a Quarto notebook?"
 
 Well, **don't!**
 
@@ -320,6 +311,50 @@ targets::tar_visnetwork()
 
 Aim for **pure functions** that take **inputs** and produce **outputs**
 without side effects.
+
+## Aside: Pure Functions
+
+```{dot}
+//| echo: false
+digraph functions {
+  rankdir=LR;
+  node [shape=circle];
+  A -> B [label="f"];
+  B -> C [label="g"];
+  A -> C [label="h"];
+}
+```
+
+$$
+g \circ f = h
+$$
+
+```{r}
+#| eval: false
+f = function(data) {
+  data |>
+    filter(x > 10) |>
+    mutate(x = x * pi)
+}
+
+```
+
+vs. **Side Effects**
+
+```{r}
+#| eval: false
+f_prime = function(value) {
+  penguins <<- penguins |>
+    mutate(x = x * value)
+}
+
+g_prime = function() {
+  penguins |>
+    ggplot()
+  # ...
+}
+```
+
 
 ## NeoVim: Not just for Speed!
 
