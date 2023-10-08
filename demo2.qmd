@@ -1,0 +1,92 @@
+---
+title: Example
+format: html
+execute:
+  echo: true
+  warning: false
+---
+
+```{r}
+library(targets)
+library(tidyverse)
+```
+
+```{r}
+#| eval: false
+tar_script()
+```
+
+```{r}
+#| eval: false
+tar_make()
+```
+
+```{r}
+tar_visnetwork()
+```
+
+```{r}
+penguins <- tar_read(penguins)
+```
+
+```{r}
+tar_read(penguins_table)
+```
+
+```{r}
+clean_penguins <- tar_read(clean_penguins)
+```
+
+```{r}
+tar_read(penguins_plot)
+```
+
+```{r}
+tar_load(anova_model)
+tar_load(linear_model)
+
+summary(anova_model)
+anova_model
+TukeyHSD(anova_model)
+```
+
+```{r}
+clean_penguins |>
+  filter(species != "Adelie") |>
+  ggplot(aes(species, bill_length_cm, color = species, group = species)) +
+  geom_violin() +
+  ggbeeswarm::geom_quasirandom() +
+  theme_minimal() +
+  stat_summary(color = "black")
+```
+
+```{r}
+sample_test <- function() {
+  t <- clean_penguins |>
+    filter(species != "Adelie") |>
+    group_by(species) |>
+    slice_sample(n = 10) |>
+    (\(x) t.test(bill_length_cm ~ species, x))()
+  t$p.value
+}
+
+tibble(
+  id = 1:100
+) |>
+  rowwise() |>
+  mutate(
+    p = sample_test()
+  ) |>
+  ggplot(aes(id, p)) +
+  geom_point() +
+  theme_minimal()
+```
+
+```{r}
+clean_penguins |>
+  count(species, sex) |>
+  drop_na()
+```
+
+
+
