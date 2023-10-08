@@ -17,9 +17,9 @@ author: Jannik Buhr
 institute: Heidelberg Institute for Theoretical Studies
 format:
   revealjs: 
+    # embed-resources: false
     title-slide-attributes:
       data-background-image: ./img/hand-axe.png
-    #   data-background-color: white
       data-background-size: contain
       data-background-position: left
     auto-animate-unmatched: false
@@ -31,35 +31,33 @@ format:
     chalkboard: 
       buttons: true
     multiplex: false
+    preview-links: auto
     theme: [default, theme.scss]
     css: ./styles.css
     footer: |
       <https://jmbuhr.de/2023-workflow>
-# favicon: ./img/logo.png
 bibliography: ./references.bib
 nocite: ""
 execute:
   warning: false
   eval: true
   echo: true
-# engine: knitr
 engine: markdown
 ---
 
 # Welcome
 
-::: {.notes}
-- juggling
-  - demo time
-  - one pin
-  - two pins
-  - three pins
-  - sports psychology: learning, overlearning
-- demo: remembering things
-  - random letters
-  - same number of characters, but words in a sentence
-  - bigger concepts in one thunk free up resources
-:::
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+```
+
+<html>
+  <script>
+  document.head.appendChild(Object.assign(document.createElement("link"), {rel: "icon", href: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦦</text></svg>"}))
+  </script>
+</html>
 
 ## Otters have a favorite Rock 🪨
 
@@ -101,7 +99,7 @@ Image sources: <https://en.wikipedia.org/wiki/Tool_use_by_sea_otters>, <https://
 . . .
 
 :::{#textbox}
-**Humans** don't just **use** tools
+**Humans** don't just **use** tools.
 
 We **shape** and **perfect** them.
 :::
@@ -123,11 +121,14 @@ Image sources: <https://www.pexels.com/photo/person-holding-a-stone-2957058/>, <
 
 Hi, I'm Jannik!
 
-Computational Biochemist at HITS and Heidelberg University
+Computational Biochemist at\
+HITS and Heidelberg University
+
+I use **Quantum Mechanical Simulations** to study how **Collagen** breaks under force
 
 ![](./img/helix-wide.png){width=60%}
 
-I love building and teaching tools.
+I love building and teaching tools 🧰
 
 :::profile
 - \@jmbuhr
@@ -142,36 +143,57 @@ I love building and teaching tools.
 
 ## The Tools Today 🧰
 
-::: {layout-ncol=3 #tool-logos}
-![](./img/targets.png)
 
-![](./img/Neovim-logo.svg)
+::: {.columns}
+::: {.column width="30%"}
+![](./img/quarto.png){width=100%}
 
-![](./img/quarto.png)
+![](./img/targets.png){width=80%}
+
+![](./img/Neovim-logo.svg){width=100%}
 :::
+::: {.column width="70%"}
+### Quarto
 
+<https://quarto.org/>
+
+Next iteration of `Rmarkdown`.
+
+### Targets
+
+<https://docs.ropensci.org/targets/>
+
+R package for reproducible workflows.
+
+### Neovim
+
+<https://neovim.io/>
+
+hyperextensible Vim-based text editor
+:::
+:::
 
 # Warmup!
 
 ## Remember these letters
 
 ```{r}
-countdown::countdown(minutes = 0, seconds = 15)
+countdown::countdown(minutes = 0, seconds = 7)
 ```
 
-xfw iadc na nvrqy bceawgj dcz lyh lwoovxxce
+[xfwiadcnanvrqybceawgjdczlyhlwoovxxce]{#letters}
 
 ## Remember these letters
 
-How many of these letters did you remember?
+How many of these letters do you remember?
 
 ## Remember these letters
-
-The quick brown fox jumps over the lazy dog
 
 ```{r}
-countdown::countdown(minutes = 0, seconds = 15)
+countdown::countdown(minutes = 0, seconds = 7)
 ```
+
+[The quick brown fox jumps over the lazy dog]{#letters}
 
 ## Remember these letters
 
@@ -183,30 +205,199 @@ Of course you do, it's just **one** sentence!
 
 . . .
 
-But it has the **same number of characters** as the random letters.
+But it has the **same number of letters** as the random letters.
 
-## Thunks
+## The Magic 7 ± 2
 
+::: {.incremental}
+- One piece of information is a **chunk**.
+- We can keep **7 chunks** in our **working memory** [@millerMagicalNumberSeven1956a].
+- We gain space by combining thoughts and **concepts**
+- Letters → 1 word
+- Words → sentence
+- Sentences → idea
+:::
 
 # Optimize Your Workflow
 
-## Keyboard Shortcuts are not just for Speed!
+## Quarto: Structure Thoughts
+
+:::{#tr}
+![](./img/quarto.png)
+:::
+
+<https://quarto.org/>
+
+An open-source scientific and technical publishing system.
+
+- The successor of `Rmarkdown`, made by the same people
+- Keep **thoughts, code and results** close
+- Cater to different **output formats**
+  - web, pdf, docx, ppt ...
+- Fully **reproducible**
+
+## {background-image="./img/rstudio.png" background-size=contain}
+
+##   {background-image="./img/choose.png" background-size=70% background-position=top}
+
+| 
+| 
+| 
+| 
+
+`qmd` files are just plain text!
+
+````
+---
+title: "quarto demo"
+format: 
+  html:
+    code-fold: true
+---
+
+## Air Quality
+
+@fig-airquality further explores the impact of temperature on ozone level.
+
+```{{r}}
+#| label: fig-airquality
+#| fig-cap: "Temperature and ozone level."
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess"
+)
+```
+````
+
+## Quarto: Structure Thoughts
+
+:::{#tr}
+![](./img/quarto.png)
+:::
+
+### Why?
+
+- Why did I perform this operation?
+  - Read a **detailed explanation** of past-me right next to the code!
+- Every journal has different formats
+  - Just let quarto **generate** them for you!
+- Could you increase the fontsize in all your plots?
+  - Sure, just **change** one number and **re-render**!
+
+### FAQ:
+
+> "I have a machine learning model that takes 6 hours to calculate. In a jupyter notebook it is simply cached, how do I put this in a Quarto notebook?"
+
+Well, **don't!**
+
+## Targets: Organize Workflows
+
+:::{#tr}
+![](./img/targets.png){width=60%}
+:::
+
+<https://docs.ropensci.org/targets/>
+
+Function-oriented Make-like **declarative workflows** for R.
+
+```{r}
+#| echo: false
+#| out-width: 90%
+targets::tar_visnetwork()
+```
+
+Aim for **pure functions** that take **inputs** and produce **outputs**
+without side effects.
+
+## Aside: Pure Functions
+
+```{dot}
+//| echo: false
+digraph functions {
+  rankdir=LR;
+  node [shape=circle];
+  A -> B [label="f"];
+  B -> C [label="g"];
+  A -> C [label="h"];
+}
+```
+
+$$
+g \circ f = h
+$$
+
+```{r}
+#| eval: false
+f = function(data) {
+  data |>
+    filter(x > 10) |>
+    mutate(x = x * pi)
+}
+
+```
+
+vs. **Side Effects**
+
+```{r}
+#| eval: false
+f_prime = function(value) {
+  penguins <<- penguins |>
+    mutate(x = x * value)
+}
+
+g_prime = function() {
+  penguins |>
+    ggplot()
+  # ...
+}
+```
+
+
+## NeoVim: Not just for Speed!
+
+![](./img/nvim-clean.png)
+
+## NeoVim: Not just for Speed!
+
+![](./img/nvim-quarto.png)
+
+## NeoVim: Not just for Speed!
+
+**Modal editing** allows us to **communicate** with the editor.
+
+**Complicated operations** become one **chunk**.
+
+**Free up resources** for the important questions.
+
+# Demo
 
 Demo Time!
 
-## Demo
+## Penguins!
 
-Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+![](./img/lter_penguins.png)
+
+::: {.aside}
+Artwork by \@allisonhorst
+:::
 
 
-# Optimize your Code
+# Take Home Messages
 
-## Code is communication
+## Take Home Messages
 
-## Put the fun in Functional Programming
+Keyboard shortcuts are for thoughts ⌨️\
 
-### Pure Functions
+Reproducibility and Interactivity can go hand in hand ▶️
 
+. . .
+
+Find your favorite rock 🪨
+
+Sharpen the axe 🪓
 
 # Thank You!
 
@@ -216,92 +407,3 @@ Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labor
 
 :::{#refs}
 :::
-
-# Targets
-
-## Init
-
-```{r}
-library(targets)
-library(tidyverse)
-```
-
-```{r}
-#| eval: false
-tar_script()
-```
-
-```{r}
-#| eval: false
-tar_make()
-```
-
-```{r}
-tar_visnetwork(callr_arguments = list(show = FALSE))
-```
-
-## Work
-
-```{r}
-penguins <- tar_read(penguins)
-```
-
-```{r}
-penguins |>
-  DT::datatable()
-```
-
-## Work
-
-```{r}
-penguins <- tar_read(clean_penguins)
-```
-
-```{r}
-penguins |>
-  ggplot(aes(bill_length_cm, bill_depth_cm)) +
-  geom_point(aes(color = species)) +
-  theme_minimal()
-```
-
-## Work
-
-```{r}
-linear_model = lm(bill_length_cm ~ species, penguins)
-anova_model = aov(bill_length_cm ~ species + sex, penguins)
-summary(anova_model)
-anova_model
-TukeyHSD(anova_model)
-```
-
-## Work
-
-```{r}
-penguins |>
-  filter(species != "Adelie") |>
-  ggplot(aes(species, bill_length_cm, color = species, group = species)) +
-  geom_violin() +
-  ggbeeswarm::geom_quasirandom() +
-  theme_minimal() +
-  stat_summary(color = "black")
-```
-
-## Work
-
-```{r}
-penguins |>
-  filter(species != "Adelie") |>
-  (\(x) t.test(bill_length_cm ~ species, x))()
-```
-
-```{r}
-penguins |>
-  count(species, sex) |>
-  drop_na()
-```
-
-
-
-
-
-

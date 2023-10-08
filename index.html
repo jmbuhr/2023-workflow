@@ -433,34 +433,14 @@ Jannik Buhr
 <section>
 <section id="welcome" class="title-slide slide level1 center">
 <h1>Welcome</h1>
-<aside class="notes">
-<ul>
-<li>juggling
-<ul>
-<li>demo time</li>
-<li>one pin</li>
-<li>two pins</li>
-<li>three pins</li>
-<li>sports psychology: learning, overlearning</li>
-</ul></li>
-<li>demo: remembering things
-<ul>
-<li>random letters</li>
-<li>same number of characters, but words in a sentence</li>
-<li>bigger concepts in one thunk free up resources</li>
-</ul></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>#| echo: false</span>
+<span id="cb1-2"><a href="#cb1-2"></a>library(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>library(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<script>
+  document.head.appendChild(Object.assign(document.createElement("link"), {rel: "icon", href: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦦</text></svg>"}))
+  </script>
+
 </section>
 <section id="otters-have-a-favorite-rock" class="slide level2">
 <h2>Otters have a favorite Rock 🪨</h2>
@@ -507,7 +487,7 @@ The <strong>same stone</strong> was frequently <strong>retained</strong> for sev
 <p><img data-src="./img/pexels-anna-urlapova-2957058.jpg" class="fl" style="width:38.0%"></p>
 <div class="fragment">
 <div id="textbox">
-<p><strong>Humans</strong> don’t just <strong>use</strong> tools</p>
+<p><strong>Humans</strong> don’t just <strong>use</strong> tools.</p>
 <p>We <strong>shape</strong> and <strong>perfect</strong> them.</p>
 </div>
 </div>
@@ -524,9 +504,11 @@ The <strong>same stone</strong> was frequently <strong>retained</strong> for sev
 <p><img data-src="./img/jannik.png"></p>
 </div>
 <p>Hi, I’m Jannik!</p>
-<p>Computational Biochemist at HITS and Heidelberg University</p>
+<p>Computational Biochemist at<br>
+HITS and Heidelberg University</p>
+<p>I use <strong>Quantum Mechanical Simulations</strong> to study how <strong>Collagen</strong> breaks under force</p>
 <p><img data-src="./img/helix-wide.png" style="width:60.0%"></p>
-<p>I love building and teaching tools.</p>
+<p>I love building and teaching tools 🧰</p>
 <div class="profile">
 <ul>
 <li>@jmbuhr</li>
@@ -539,23 +521,27 @@ The <strong>same stone</strong> was frequently <strong>retained</strong> for sev
 </div>
 <div id="qr" class="qrcode"></div>
 <script type="text/javascript">
-var qrcode = new QRCode("qr", {"colorLight":"#ffffff","text":"https://github.com/jmbuhr.de/2023-workflow","colorDark":"#1E4287","width":"124","height":"124"});
+var qrcode = new QRCode("qr", {"colorDark":"#1E4287","text":"https://github.com/jmbuhr.de/2023-workflow","height":"124","colorLight":"#ffffff","width":"124"});
 </script>
     
 </section>
 <section id="the-tools-today" class="slide level2">
 <h2>The Tools Today 🧰</h2>
-<div id="tool-logos" class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img data-src="./img/targets.png"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img data-src="./img/Neovim-logo.svg"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img data-src="./img/quarto.png"></p>
-</div>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="./img/quarto.png" style="width:100.0%"></p>
+<p><img data-src="./img/targets.png" style="width:80.0%"></p>
+<p><img data-src="./img/Neovim-logo.svg" style="width:100.0%"></p>
+</div><div class="column" style="width:70%;">
+<h3 id="quarto">Quarto</h3>
+<p><a href="https://quarto.org/" class="uri">https://quarto.org/</a></p>
+<p>Next iteration of <code>Rmarkdown</code>.</p>
+<h3 id="targets">Targets</h3>
+<p><a href="https://docs.ropensci.org/targets/" class="uri">https://docs.ropensci.org/targets/</a></p>
+<p>R package for reproducible workflows.</p>
+<h3 id="neovim">Neovim</h3>
+<p><a href="https://neovim.io/" class="uri">https://neovim.io/</a></p>
+<p>hyperextensible Vim-based text editor</p>
 </div>
 </div>
 </section></section>
@@ -566,17 +552,17 @@ var qrcode = new QRCode("qr", {"colorLight":"#ffffff","text":"https://github.com
 </section>
 <section id="remember-these-letters" class="slide level2">
 <h2>Remember these letters</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>countdown::countdown(minutes = 0, seconds = 15)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>xfw iadc na nvrqy bceawgj dcz lyh lwoovxxce</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>countdown::countdown(minutes = 0, seconds = 7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span id="letters">xfwiadcnanvrqybceawgjdczlyhlwoovxxce</span></p>
 </section>
 <section id="remember-these-letters-1" class="slide level2">
 <h2>Remember these letters</h2>
-<p>How many of these letters did you remember?</p>
+<p>How many of these letters do you remember?</p>
 </section>
 <section id="remember-these-letters-2" class="slide level2">
 <h2>Remember these letters</h2>
-<p>The quick brown fox jumps over the lazy dog</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>countdown::countdown(minutes = 0, seconds = 15)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>countdown::countdown(minutes = 0, seconds = 7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span id="letters">The quick brown fox jumps over the lazy dog</span></p>
 </section>
 <section id="remember-these-letters-3" class="slide level2">
 <h2>Remember these letters</h2>
@@ -585,36 +571,205 @@ var qrcode = new QRCode("qr", {"colorLight":"#ffffff","text":"https://github.com
 <p>Of course you do, it’s just <strong>one</strong> sentence!</p>
 </div>
 <div class="fragment">
-<p>But it has the <strong>same number of characters</strong> as the random letters.</p>
+<p>But it has the <strong>same number of letters</strong> as the random letters.</p>
 </div>
 </section>
-<section id="thunks" class="slide level2">
-<h2>Thunks</h2>
+<section id="the-magic-7-2" class="slide level2">
+<h2>The Magic 7 ± 2</h2>
+<div>
+<ul>
+<li class="fragment">One piece of information is a <strong>chunk</strong>.</li>
+<li class="fragment">We can keep <strong>7 chunks</strong> in our <strong>working memory</strong> <span class="citation" data-cites="millerMagicalNumberSeven1956a">(<a href="#/references" role="doc-biblioref" onclick="">Miller 1956</a>)</span>.</li>
+<li class="fragment">We gain space by combining thoughts and <strong>concepts</strong></li>
+<li class="fragment">Letters → 1 word</li>
+<li class="fragment">Words → sentence</li>
+<li class="fragment">Sentences → idea</li>
+</ul>
+</div>
 </section></section>
 <section>
 <section id="optimize-your-workflow" class="title-slide slide level1 center">
 <h1>Optimize Your Workflow</h1>
 
 </section>
-<section id="keyboard-shortcuts-are-not-just-for-speed" class="slide level2">
-<h2>Keyboard Shortcuts are not just for Speed!</h2>
-<p>Demo Time!</p>
+<section id="quarto-structure-thoughts" class="slide level2">
+<h2>Quarto: Structure Thoughts</h2>
+<div id="tr">
+<p><img data-src="./img/quarto.png"></p>
+</div>
+<p><a href="https://quarto.org/" class="uri">https://quarto.org/</a></p>
+<p>An open-source scientific and technical publishing system.</p>
+<ul>
+<li>The successor of <code>Rmarkdown</code>, made by the same people</li>
+<li>Keep <strong>thoughts, code and results</strong> close</li>
+<li>Cater to different <strong>output formats</strong>
+<ul>
+<li>web, pdf, docx, ppt …</li>
+</ul></li>
+<li>Fully <strong>reproducible</strong></li>
+</ul>
 </section>
-<section id="demo" class="slide level2">
-<h2>Demo</h2>
-<p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
+<section id="section" class="slide level2" data-background-image="./img/rstudio.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-1" class="slide level2" data-background-image="./img/choose.png" data-background-size="70%" data-background-position="top">
+<h2>&nbsp;</h2>
+<p><br>
+<br>
+<br>
+</p>
+<p><code>qmd</code> files are just plain text!</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "quarto demo"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Air Quality</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>@fig-airquality further explores the impact of temperature on ozone level.</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-airquality</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Temperature and ozone level."</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="quarto-structure-thoughts-1" class="slide level2">
+<h2>Quarto: Structure Thoughts</h2>
+<div id="tr">
+<p><img data-src="./img/quarto.png"></p>
+</div>
+<h3 id="why">Why?</h3>
+<ul>
+<li>Why did I perform this operation?
+<ul>
+<li>Read a <strong>detailed explanation</strong> of past-me right next to the code!</li>
+</ul></li>
+<li>Every journal has different formats
+<ul>
+<li>Just let quarto <strong>generate</strong> them for you!</li>
+</ul></li>
+<li>Could you increase the fontsize in all your plots?
+<ul>
+<li>Sure, just <strong>change</strong> one number and <strong>re-render</strong>!</li>
+</ul></li>
+</ul>
+<h3 id="faq">FAQ:</h3>
+<blockquote>
+<p>“I have a machine learning model that takes 6 hours to calculate. In a jupyter notebook it is simply cached, how do I put this in a Quarto notebook?”</p>
+</blockquote>
+<p>Well, <strong>don’t!</strong></p>
+</section>
+<section id="targets-organize-workflows" class="slide level2">
+<h2>Targets: Organize Workflows</h2>
+<div id="tr">
+<p><img data-src="./img/targets.png" style="width:60.0%"></p>
+</div>
+<p><a href="https://docs.ropensci.org/targets/" class="uri">https://docs.ropensci.org/targets/</a></p>
+<p>Function-oriented Make-like <strong>declarative workflows</strong> for R.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>#| echo: false</span>
+<span id="cb5-2"><a href="#cb5-2"></a>#| out-width: 90%</span>
+<span id="cb5-3"><a href="#cb5-3"></a>targets::tar_visnetwork()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aim for <strong>pure functions</strong> that take <strong>inputs</strong> and produce <strong>outputs</strong> without side effects.</p>
+</section>
+<section id="aside-pure-functions" class="slide level2">
+<h2>Aside: Pure Functions</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 199.68 81.01" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 77.01)">
+<title>
+functions
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-77.01 195.68,-77.01 195.68,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="18.01" cy="-18.01" rx="18.02" ry="18.02"></ellipse> <text text-anchor="middle" x="18.01" y="-13.81" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="94.68" cy="-55.01" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="94.68" y="-50.81" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&gt;B --> <g id="edge1" class="edge">
+<title>
+A-&gt;B
+</title>
+<path fill="none" stroke="black" d="M34.48,-25.68C44.49,-30.64 57.75,-37.2 69.17,-42.87"></path> <polygon fill="black" stroke="black" points="67.72,-46.05 78.23,-47.35 70.82,-39.78 67.72,-46.05"></polygon> <text text-anchor="middle" x="56.35" y="-41.21" font-family="Times,serif" font-size="14.00">f</text> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="173.68" cy="-18.01" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="173.68" y="-13.81" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- A&#45;&gt;C --> <g id="edge3" class="edge">
+<title>
+A-&gt;C
+</title>
+<path fill="none" stroke="black" d="M36.12,-15.46C47.57,-13.88 63,-12.01 76.68,-11.21 92.66,-10.27 96.71,-10.31 112.68,-11.21 123.48,-11.82 135.32,-13.04 145.61,-14.29"></path> <polygon fill="black" stroke="black" points="145.3,-17.77 155.66,-15.56 146.18,-10.83 145.3,-17.77"></polygon> <text text-anchor="middle" x="94.68" y="-16.21" font-family="Times,serif" font-size="14.00">h</text> </g> <!-- B&#45;&gt;C --> <g id="edge2" class="edge">
+<title>
+B-&gt;C
+</title>
+<path fill="none" stroke="black" d="M111.27,-47.52C121.81,-42.46 135.95,-35.66 148.01,-29.87"></path> <polygon fill="black" stroke="black" points="149.63,-32.97 157.12,-25.49 146.59,-26.66 149.63,-32.97"></polygon> <text text-anchor="middle" x="134.18" y="-41.21" font-family="Times,serif" font-size="14.00">g</text> </g> </g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<p><span class="math display">\[
+g \circ f = h
+\]</span></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>#| eval: false</span>
+<span id="cb6-2"><a href="#cb6-2"></a>f = function(data) {</span>
+<span id="cb6-3"><a href="#cb6-3"></a>  data |&gt;</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    filter()</span>
+<span id="cb6-5"><a href="#cb6-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="neovim-not-just-for-speed" class="slide level2">
+<h2>NeoVim: Not just for Speed!</h2>
+
+<img data-src="./img/nvim-clean.png" class="r-stretch"></section>
+<section id="neovim-not-just-for-speed-1" class="slide level2">
+<h2>NeoVim: Not just for Speed!</h2>
+
+<img data-src="./img/nvim-quarto.png" class="r-stretch"></section>
+<section id="neovim-not-just-for-speed-2" class="slide level2">
+<h2>NeoVim: Not just for Speed!</h2>
+<p><strong>Modal editing</strong> allows us to <strong>communicate</strong> with the editor.</p>
+<p><strong>Complicated operations</strong> become one <strong>chunk</strong>.</p>
+<p><strong>Free up resources</strong> for the important questions.</p>
 </section></section>
 <section>
-<section id="optimize-your-code" class="title-slide slide level1 center">
-<h1>Optimize your Code</h1>
+<section id="demo" class="title-slide slide level1 center">
+<h1>Demo</h1>
+<p>Demo Time!</p>
+</section>
+<section id="penguins" class="slide level2">
+<h2>Penguins!</h2>
+<p><img data-src="./img/lter_penguins.png"></p>
+
+<aside><div>
+<p>Artwork by @allisonhorst</p>
+</div></aside></section></section>
+<section>
+<section id="take-home-messages" class="title-slide slide level1 center">
+<h1>Take Home Messages</h1>
 
 </section>
-<section id="code-is-communication" class="slide level2">
-<h2>Code is communication</h2>
-</section>
-<section id="put-the-fun-in-functional-programming" class="slide level2">
-<h2>Put the fun in Functional Programming</h2>
-<h3 id="pure-functions">Pure Functions</h3>
+<section id="take-home-messages-1" class="slide level2">
+<h2>Take Home Messages</h2>
+<p>Keyboard shortcuts are for thoughts ⌨️<br>
+</p>
+<p>Reproducibility and Interactivity can go hand in hand ▶️</p>
+<div class="fragment">
+<p>Find your favorite rock 🪨</p>
+<p>Sharpen the axe 🪓</p>
+</div>
 </section></section>
 <section>
 <section id="thank-you" class="title-slide slide level1 center">
@@ -630,63 +785,10 @@ var qrcode = new QRCode("qr", {"colorLight":"#ffffff","text":"https://github.com
 <div id="ref-hallToolUsingBehaviorCalifornia1964" class="csl-entry" role="listitem">
 Hall, K. R. L., and George B. Schaller. 1964. <span>“Tool-<span>Using Behavior</span> of the <span>California Sea Otter</span>.”</span> <em>Journal of Mammalogy</em> 45 (2): 287–98. <a href="https://doi.org/10.2307/1376994">https://doi.org/10.2307/1376994</a>.
 </div>
+<div id="ref-millerMagicalNumberSeven1956a" class="csl-entry" role="listitem">
+Miller, George A. 1956. <span>“The Magical Number Seven, Plus or Minus Two: <span>Some</span> Limits on Our Capacity for Processing Information.”</span> <em>Psychological Review</em> 63 (2): 81–97. <a href="https://doi.org/10.1037/h0043158">https://doi.org/10.1037/h0043158</a>.
 </div>
-</section></section>
-<section>
-<section id="targets" class="title-slide slide level1 center">
-<h1>Targets</h1>
-
-</section>
-<section id="init" class="slide level2">
-<h2>Init</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>library(targets)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>library(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>#| eval: false</span>
-<span id="cb4-2"><a href="#cb4-2"></a>tar_script()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>#| eval: false</span>
-<span id="cb5-2"><a href="#cb5-2"></a>tar_make()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>tar_visnetwork(callr_arguments = list(show = FALSE))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="work" class="slide level2">
-<h2>Work</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>penguins &lt;- tar_read(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>penguins |&gt;</span>
-<span id="cb8-2"><a href="#cb8-2"></a>  DT::datatable()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="work-1" class="slide level2">
-<h2>Work</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>penguins &lt;- tar_read(clean_penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>penguins |&gt;</span>
-<span id="cb10-2"><a href="#cb10-2"></a>  ggplot(aes(bill_length_cm, bill_depth_cm)) +</span>
-<span id="cb10-3"><a href="#cb10-3"></a>  geom_point(aes(color = species)) +</span>
-<span id="cb10-4"><a href="#cb10-4"></a>  theme_minimal()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="work-2" class="slide level2">
-<h2>Work</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>linear_model = lm(bill_length_cm ~ species, penguins)</span>
-<span id="cb11-2"><a href="#cb11-2"></a>anova_model = aov(bill_length_cm ~ species + sex, penguins)</span>
-<span id="cb11-3"><a href="#cb11-3"></a>summary(anova_model)</span>
-<span id="cb11-4"><a href="#cb11-4"></a>anova_model</span>
-<span id="cb11-5"><a href="#cb11-5"></a>TukeyHSD(anova_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="work-3" class="slide level2">
-<h2>Work</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href="#cb12-1"></a>penguins |&gt;</span>
-<span id="cb12-2"><a href="#cb12-2"></a>  filter(species != "Adelie") |&gt;</span>
-<span id="cb12-3"><a href="#cb12-3"></a>  ggplot(aes(species, bill_length_cm, color = species, group = species)) +</span>
-<span id="cb12-4"><a href="#cb12-4"></a>  geom_violin() +</span>
-<span id="cb12-5"><a href="#cb12-5"></a>  ggbeeswarm::geom_quasirandom() +</span>
-<span id="cb12-6"><a href="#cb12-6"></a>  theme_minimal() +</span>
-<span id="cb12-7"><a href="#cb12-7"></a>  stat_summary(color = "black")</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="work-4" class="slide level2">
-<h2>Work</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href="#cb13-1"></a>penguins |&gt;</span>
-<span id="cb13-2"><a href="#cb13-2"></a>  filter(species != "Adelie") |&gt;</span>
-<span id="cb13-3"><a href="#cb13-3"></a>  (\(x) t.test(bill_length_cm ~ species, x))()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href="#cb14-1"></a>penguins |&gt;</span>
-<span id="cb14-2"><a href="#cb14-2"></a>  count(species, sex) |&gt;</span>
-<span id="cb14-3"><a href="#cb14-3"></a>  drop_na()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="footer footer-default">
 <p><a href="https://jmbuhr.de/2023-workflow" class="uri">https://jmbuhr.de/2023-workflow</a></p>
 </div>
@@ -717,7 +819,7 @@ Hall, K. R. L., and George B. Schaller. 1964. <span>“Tool-<span>Using Behavior
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': false,
+'previewLinksAuto': true,
 'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",

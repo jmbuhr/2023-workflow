@@ -1,1 +1,1 @@
-options(tidyverse.quiet=TRUE)
+options(tidyverse.quiet = TRUE)
