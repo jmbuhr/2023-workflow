@@ -1,30 +1,9 @@
 ---
-title: "Penguins!"
+title: "Demo"
 format: html
 ---
 
 # A Modal Editor
-
-Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
-
-```{r}
-#| eval: false
-#| echo: true
-
-df <- data.frame(
-  x = 1:10,
-  y = 1:10
-)
-
-substract <- function(x, y) {
-  x - y
-}
-
-add = function(x, y) {
-  x + y
-}
-```
 
 # Targets
 
@@ -48,52 +27,42 @@ tar_visnetwork(callr_arguments = list(show = FALSE))
 ```
 
 ```{r}
-penguins <- tar_read(penguins)
-penguins
+tar_load(penguins)
 ```
 
 ```{r}
-penguins |>
-  DT::datatable()
+DT::datatable(penguins)
 ```
 
 ```{r}
-penguins <- tar_read(clean_penguins)
+clean_penguins <- tar_read(clean_penguins)
 ```
 
 ```{r}
-penguins |>
+clean_penguins |>
   ggplot(aes(bill_length_cm, bill_depth_cm)) +
   geom_point(aes(color = species)) +
   theme_minimal()
 ```
 
 ```{r}
-linear_model = lm(bill_length_cm ~ species, penguins)
-anova_model = aov(bill_length_cm ~ species + sex, penguins)
+anova_model <- aov(bill_length_cm ~ species + sex, clean_penguins)
 summary(anova_model)
-anova_model
 TukeyHSD(anova_model)
 ```
 
 ```{r}
-penguins |>
-  filter(species != "Adelie") |>
+clean_penguins |>
   ggplot(aes(species, bill_length_cm, color = species, group = species)) +
-  geom_violin() +
   ggbeeswarm::geom_quasirandom() +
   theme_minimal() +
-  stat_summary(color = "black")
+  stat_summary(color = "black") +
+  guides(color = FALSE)
 ```
 
-```{r}
-penguins |>
-  filter(species != "Adelie") |>
-  (\(x) t.test(bill_length_cm ~ species, x))()
-```
 
 ```{r}
-penguins |>
+clean_penguins |>
   count(species, sex) |>
   drop_na()
 ```
