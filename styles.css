@@ -92,4 +92,13 @@ div.profile > ul > li {
   width: 25%;
 }
 
+.sidenote {
+  position: absolute;
+  top: 35%;
+  right: 0;
+  width: 30%;
+  font-size: 4rem;
+}
+
+
 

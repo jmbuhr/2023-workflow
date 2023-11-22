@@ -40,9 +40,9 @@ bibliography: ./references.bib
 nocite: ""
 execute:
   warning: false
-  eval: true
+  eval: false
   echo: true
-engine: markdown
+engine: knitr
 ---
 
 # Welcome
@@ -178,6 +178,7 @@ hyperextensible Vim-based text editor
 ## Remember these letters
 
 ```{r}
+#| echo: false
 countdown::countdown(minutes = 0, seconds = 7)
 ```
 
@@ -190,6 +191,7 @@ How many of these letters do you remember?
 ## Remember these letters
 
 ```{r}
+#| echo: false
 countdown::countdown(minutes = 0, seconds = 7)
 ```
 
@@ -238,12 +240,13 @@ An open-source scientific and technical publishing system.
 
 ## {background-image="./img/rstudio.png" background-size=contain}
 
-##   {background-image="./img/choose.png" background-size=70% background-position=top}
+## {background-image="./img/choose.png" background-size=70% background-position=top}
 
 | 
 | 
 | 
 | 
+|
 
 `qmd` files are just plain text!
 
@@ -278,18 +281,22 @@ ggplot(airquality, aes(Temp, Ozone)) +
 ![](./img/quarto.png)
 :::
 
+:::sidenote
+🖥️📱📰
+:::
+
 ### Why?
 
 - Why did I perform this operation?
   - Read a **detailed explanation** of past-me right next to the code!
-- Every journal has different formats
+- Different and changing output requirements?
   - Just let quarto **generate** them for you!
 - Could you increase the fontsize in all your plots?
   - Sure, just **change** one number and **re-render**!
 
 ### FAQ:
 
-> "I have a machine learning model that takes 6 hours to calculate. In a jupyter notebook it is simply cached, how do I put this in a Quarto notebook?"
+> "I have a machine learning model that takes 6 hours to calculate. [...] how do I put this in a Quarto notebook?"
 
 Well, **don't!**
 
@@ -326,14 +333,14 @@ digraph functions {
 ```
 
 $$
-g \circ f = h
+g \circ f = h\
 $$
 
 ```{r}
 #| eval: false
-f = function(data) {
+f = function(data, condition) {
   data |>
-    filter(x > 10) |>
+    filter(x > condition) |>
     mutate(x = x * pi)
 }
 
@@ -344,14 +351,9 @@ vs. **Side Effects**
 ```{r}
 #| eval: false
 f_prime = function(value) {
-  penguins <<- penguins |>
-    mutate(x = x * value)
-}
-
-g_prime = function() {
-  penguins |>
-    ggplot()
-  # ...
+  data <<- data |>
+    filter(x > 10) |>
+    mutate(x = x * pi)
 }
 ```
 
@@ -384,18 +386,21 @@ Demo Time!
 Artwork by \@allisonhorst
 :::
 
-
 # Take Home Messages
 
 ## Take Home Messages
 
-Keyboard shortcuts are for thoughts ⌨️\
+Keyboard shortcuts are for thoughts ⌨️
+
+. . .
 
 Reproducibility and Interactivity can go hand in hand ▶️
 
 . . .
 
 Find your favorite rock 🪨
+
+. . .
 
 Sharpen the axe 🪓
 
