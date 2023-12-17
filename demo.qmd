@@ -1,74 +1,99 @@
 ---
 title: "Demo"
 format: html
+execute:
+  warning: false
 ---
 
 # A Modal Editor
 
+This is an example sentence. It lives in this example paragraph.
+Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+
+Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet.
+ Nisi anim cupidatat excepteur officia.
+ Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident.
+ Nostrud officia pariatur ut officia.
+ Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate.
+ Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod.
+ Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim.
+ Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+
+
 # Targets
+
+## Setup
+
+Load packages.
 
 ```{r}
 library(targets)
 library(tidyverse)
 ```
 
+Generate the `_targets.R` file.
+
 ```{r}
 #| eval: false
 tar_script()
 ```
+
+Run the pipeline.
 
 ```{r}
 #| eval: false
 tar_make()
 ```
 
+Visualize the pipeline.
+
 ```{r}
 tar_visnetwork(callr_arguments = list(show = FALSE))
 ```
 
+Load the updated targets.
+
 ```{r}
 tar_load(penguins)
+tar_load(penguins_clean)
+tar_load(species_colors)
 ```
+
+## Visualize the dataset
+
+![](./img/lter_penguins.png)
 
 ```{r}
 DT::datatable(penguins)
 ```
 
 ```{r}
-clean_penguins <- tar_read(clean_penguins)
-```
-
-```{r}
-clean_penguins |>
+penguins_clean |>
   ggplot(aes(bill_length_cm, bill_depth_cm)) +
-  geom_point(aes(color = species)) +
-  theme_minimal()
+  geom_point(aes(color = species, shape = sex), size = 5) +
+  theme_minimal() +
+  scale_color_manual(values = species_colors)
+```
+
+## Build a model
+
+```{r}
+anova_model <- aov(bill_length_cm ~ species + sex, penguins_clean)
 ```
 
 ```{r}
-anova_model <- aov(bill_length_cm ~ species + sex, clean_penguins)
 summary(anova_model)
 TukeyHSD(anova_model)
 ```
 
 ```{r}
-clean_penguins |>
+penguins_clean |>
   ggplot(aes(species, bill_length_cm, color = species, group = species)) +
   ggbeeswarm::geom_quasirandom() +
   theme_minimal() +
   stat_summary(color = "black") +
+  scale_color_manual(values = species_colors) +
   guides(color = FALSE)
 ```
-
-
-```{r}
-clean_penguins |>
-  count(species, sex) |>
-  drop_na()
-```
-
-
-
-
 
 

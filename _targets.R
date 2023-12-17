@@ -14,5 +14,6 @@ clean_data <- function(data) {
 # End this file with a list of target objects.
 list(
   tar_target(penguins, palmerpenguins::penguins),
-  tar_target(clean_penguins, clean_data(penguins))
+  tar_target(penguins_clean, clean_data(penguins)),
+  tar_target(species_colors, c("Adelie" = "#ff7525", "Chinstrap" = "#ca5bc8", "Gentoo" = "#007475"))
 )
