@@ -85,7 +85,7 @@ div.profile > ul > li {
   font-size: 1.5em;
 }
 
-#tr {
+.tr {
   position: absolute;
   top: 0;
   right: 0;
@@ -100,5 +100,11 @@ div.profile > ul > li {
   font-size: 4rem;
 }
 
+#rstudio {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 55%;
+}
 
 

@@ -9,7 +9,7 @@
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.4.513">
 
   <meta name="author" content="Jannik Buhr">
   <meta name="dcterms.date" content="2023-12-19">
@@ -33,7 +33,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -100,6 +100,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -245,7 +246,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -408,6 +410,12 @@
       margin-right: 0; 
     }
   </style>
+  <link href="index_files/libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="index_files/libs/countdown-0.4.0/countdown.js"></script>
+  <script src="index_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+  <link href="index_files/libs/vis-9.1.0/vis-network.min.css" rel="stylesheet">
+  <script src="index_files/libs/vis-9.1.0/vis-network.min.js"></script>
+  <script src="index_files/libs/visNetwork-binding-2.1.2/visNetwork.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -441,7 +449,7 @@ Jannik Buhr
 </section>
 <section id="otters-have-a-favorite-rock" class="slide level2">
 <h2>Otters have a favorite Rock 🪨</h2>
-<div class="quarto-layout-panel">
+<div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img data-src="./img/otter-hello.png"></p>
@@ -449,7 +457,7 @@ Jannik Buhr
 <div id="quote" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img data-src="./img/otter-pound.png" id="otter-pound"></p>
 <blockquote>
-<p>“The mean number of <strong>blows</strong> necessary <strong>to open a mussel</strong> was <strong>35.5</strong> (range 6–88, sd 20.4).<br>
+<p>“The mean number of <strong>blows</strong> necessary <strong>to open a mussel</strong> was <strong>35.5</strong> […].<br>
 The <strong>same stone</strong> was frequently <strong>retained</strong> for several successive food items, […]”</p>
 <p>— <span class="citation" data-cites="hallToolUsingBehaviorCalifornia1964">Hall and Schaller (<a href="#/references" role="doc-biblioref" onclick="">1964</a>)</span></p>
 </blockquote>
@@ -479,14 +487,12 @@ The <strong>same stone</strong> was frequently <strong>retained</strong> for sev
 <p>— <del>Abraham</del> Otterham Lincoln</p>
 </blockquote>
 </section>
-<section id="otters-have-a-favorite-rock-3" class="slide level2">
-<h2>Otters have a favorite Rock 🪨</h2>
+<section id="humans-are-toolmakers" class="slide level2">
+<h2>Humans are toolmakers 🪓</h2>
 <p><img data-src="./img/pexels-anna-urlapova-2957058.jpg" class="fl" style="width:38.0%"></p>
-<div class="fragment">
 <div id="textbox">
 <p><strong>Humans</strong> don’t just <strong>use</strong> tools.</p>
 <p>We <strong>shape</strong> and <strong>perfect</strong> them.</p>
-</div>
 </div>
 <div class="fragment">
 <p><img data-src="./img/hand-axe.png" class="fr" style="width:38.0%"></p>
@@ -518,7 +524,7 @@ HITS and Heidelberg University</p>
 </div>
 <div id="qr" class="qrcode"></div>
 <script type="text/javascript">
-var qrcode = new QRCode("qr", {"height":"124","width":"124","colorLight":"#ffffff","text":"https://github.com/jmbuhr.de/2023-workflow","colorDark":"#1E4287"});
+var qrcode = new QRCode("qr", {"height":"124","width":"124","colorDark":"#1E4287","text":"https://github.com/jmbuhr.de/2023-workflow","colorLight":"#ffffff"});
 </script>
     
 </section>
@@ -527,7 +533,7 @@ var qrcode = new QRCode("qr", {"height":"124","width":"124","colorLight":"#fffff
 <div class="columns">
 <div class="column" style="width:30%;">
 <p><img data-src="./img/quarto.png" style="width:100.0%"></p>
-<p><img data-src="./img/targets.png" style="width:80.0%"></p>
+<p><img data-src="./img/targets.png" style="width:50.0%"></p>
 <p><img data-src="./img/Neovim-logo.svg" style="width:100.0%"></p>
 </div><div class="column" style="width:70%;">
 <h3 id="quarto">Quarto</h3>
@@ -549,6 +555,14 @@ var qrcode = new QRCode("qr", {"height":"124","width":"124","colorLight":"#fffff
 </section>
 <section id="remember-these-letters" class="slide level2">
 <h2>Remember these letters</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_e43394a6" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">07</span></code>
+</div>
+</div>
+</div>
 <p><span id="letters">xfwiadcnanvrqybceawgjdczlyhlwoovxxce</span></p>
 </section>
 <section id="remember-these-letters-1" class="slide level2">
@@ -557,6 +571,14 @@ var qrcode = new QRCode("qr", {"height":"124","width":"124","colorLight":"#fffff
 </section>
 <section id="remember-these-letters-2" class="slide level2">
 <h2>Remember these letters</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_f5df3f43" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">07</span></code>
+</div>
+</div>
+</div>
 <p><span id="letters">The quick brown fox jumps over the lazy dog</span></p>
 </section>
 <section id="remember-these-letters-3" class="slide level2">
@@ -589,7 +611,7 @@ var qrcode = new QRCode("qr", {"height":"124","width":"124","colorLight":"#fffff
 </section>
 <section id="quarto-structure-thoughts" class="slide level2">
 <h2>Quarto: Structure Thoughts</h2>
-<div id="tr">
+<div class="tr">
 <p><img data-src="./img/quarto.png"></p>
 </div>
 <p><a href="https://quarto.org/" class="uri">https://quarto.org/</a></p>
@@ -603,50 +625,47 @@ var qrcode = new QRCode("qr", {"height":"124","width":"124","colorLight":"#fffff
 </ul></li>
 <li>Fully <strong>reproducible</strong></li>
 </ul>
+<p><img data-src="./img/rstudio.png" id="rstudio"></p>
 </section>
-<section id="section" class="slide level2" data-background-image="./img/rstudio.png" data-background-size="contain">
+<section id="section" class="slide level2" data-background-image="./img/choose.png" data-background-size="70%" data-background-position="top">
 <h2></h2>
-</section>
-<section id="section-1" class="slide level2" data-background-image="./img/choose.png" data-background-size="70%" data-background-position="top">
-<h2></h2>
-<p><br>
+<div class="line-block"><br>
 <br>
 <br>
 <br>
-</p>
+</div>
 <p><code>qmd</code> files are just plain text!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "quarto demo"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Air Quality</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>@fig-airquality further explores the impact of temperature on ozone level.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-airquality</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Temperature and ozone level."</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "quarto demo"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">  html:</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">    code-fold: true</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co">---</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">## Air Quality</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a>@fig-airquality further explores the impact of temperature on ozone level.</span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="in">```{r}</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="in">#| label: fig-airquality</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="in">#| fig-cap: "Temperature and ozone level."</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="in">ggplot(airquality, aes(Temp, Ozone)) + </span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="in">  geom_point() + </span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="in">  geom_smooth(method = "loess"</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="in">)</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="quarto-structure-thoughts-1" class="slide level2">
 <h2>Quarto: Structure Thoughts</h2>
-<div id="tr">
+<div class="tr">
 <p><img data-src="./img/quarto.png"></p>
 </div>
 <div class="sidenote">
 <p>🖥️📱📰</p>
 </div>
-<h3 id="why">Why?</h3>
 <ul>
 <li>Why did I perform this operation?
 <ul>
@@ -661,50 +680,29 @@ var qrcode = new QRCode("qr", {"height":"124","width":"124","colorLight":"#fffff
 <li>Sure, just <strong>change</strong> one number and <strong>re-render</strong>!</li>
 </ul></li>
 </ul>
-<h3 id="faq">FAQ:</h3>
+<div class="fragment">
 <blockquote>
 <p>“I have a machine learning model that takes 6 hours to calculate. […] how do I put this in a Quarto notebook?”</p>
 </blockquote>
+</div>
+<div class="fragment">
 <p>Well, <strong>don’t!</strong></p>
+</div>
 </section>
 <section id="targets-organize-workflows" class="slide level2">
 <h2>Targets: Organize Workflows</h2>
-<div id="tr">
-<p><img data-src="./img/targets.png" style="width:60.0%"></p>
+<div class="tr">
+<p><img data-src="./img/targets.png" style="width:50.0%"></p>
 </div>
 <p><a href="https://docs.ropensci.org/targets/" class="uri">https://docs.ropensci.org/targets/</a></p>
 <p>Function-oriented Make-like <strong>declarative workflows</strong> for R.</p>
-<p>Aim for <strong>pure functions</strong> that take <strong>inputs</strong> and produce <strong>outputs</strong> without side effects.</p>
-</section>
-<section id="aside-pure-functions" class="slide level2">
-<h2>Aside: Pure Functions</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<div>
-
+<div class="visNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2f847bfaa79e7da247f8" style="width:90%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2f847bfaa79e7da247f8">{"x":{"nodes":{"name":["clean_penguins","penguins","clean_data"],"type":["stem","stem","function"],"status":["outdated","uptodate","outdated"],"seconds":[0.011,0.002,null],"bytes":[3610,2917,null],"branches":[null,null,null],"label":["clean_penguins","penguins","clean_data"],"color":["#78B7C5","#354823","#78B7C5"],"id":["clean_penguins","penguins","clean_data"],"level":[2,1,1],"shape":["dot","dot","triangle"]},"edges":{"from":["clean_data","penguins"],"to":["clean_penguins","clean_penguins"],"arrows":["to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"interaction":{"zoomSpeed":1},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Outdated","Up to date","Stem","Function"],"color":["#78B7C5","#354823","#899DA4","#899DA4"],"shape":["dot","dot","dot","triangle"]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-</div>
-</div>
-<p><span class="math display">\[
-g \circ f = h\
-\]</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>f <span class="ot">=</span> <span class="cf">function</span>(data, condition) {</span>
-<span id="cb2-2"><a href="#cb2-2"></a>  data <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>    <span class="fu">filter</span>(x <span class="sc">&gt;</span> condition) <span class="sc">|&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>    <span class="fu">mutate</span>(<span class="at">x =</span> x <span class="sc">*</span> pi)</span>
-<span id="cb2-5"><a href="#cb2-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>vs.&nbsp;<strong>Side Effects</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>f_prime <span class="ot">=</span> <span class="cf">function</span>(value) {</span>
-<span id="cb3-2"><a href="#cb3-2"></a>  data <span class="ot">&lt;&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>    <span class="fu">filter</span>(x <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>    <span class="fu">mutate</span>(<span class="at">x =</span> x <span class="sc">*</span> pi)</span>
-<span id="cb3-5"><a href="#cb3-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>Aim for <strong>pure functions</strong> that take <strong>inputs</strong> and produce <strong>outputs</strong> without side effects.</p>
 </section>
 <section id="neovim-not-just-for-speed" class="slide level2">
 <h2>NeoVim: Not just for Speed!</h2>
@@ -720,18 +718,15 @@ g \circ f = h\
 <p><strong>Complicated operations</strong> become one <strong>chunk</strong>.</p>
 <p><strong>Free up resources</strong> for the important questions.</p>
 </section></section>
-<section>
 <section id="demo" class="title-slide slide level1 center">
 <h1>Demo</h1>
 <p>Demo Time!</p>
-</section>
-<section id="penguins" class="slide level2">
-<h2>Penguins!</h2>
-<p><img data-src="./img/lter_penguins.png"></p>
+<p><img data-src="./img/lter_penguins.png" style="width:80.0%"></p>
 
 <aside><div>
 <p>Artwork by @allisonhorst</p>
-</div></aside></section></section>
+</div></aside></section>
+
 <section>
 <section id="take-home-messages" class="title-slide slide level1 center">
 <h1>Take Home Messages</h1>
@@ -749,23 +744,118 @@ g \circ f = h\
 <div class="fragment">
 <p>Sharpen the axe 🪓</p>
 </div>
-</section></section>
-<section>
-<section id="thank-you" class="title-slide slide level1 center">
-<h1>Thank You!</h1>
-
-</section>
-<section id="thank-you-1" class="slide level2">
-<h2>Thank You!</h2>
+<div class="fragment">
+<p>Slides: <a href="https://jmbuhr.de/2023-workflow" class="uri">https://jmbuhr.de/2023-workflow</a></p>
+<div id="qr2" class="qrcode"></div>
+<script type="text/javascript">
+var qrcode = new QRCode("qr2", {"height":"124","width":"124","colorDark":"#1E4287","text":"https://github.com/jmbuhr.de/2023-workflow","colorLight":"#ffffff"});
+</script>
+    
+<div class="profile">
+<ul>
+<li>@jmbuhr</li>
+<li><a href="https://github.com/jmbuhr" class="bi-github"></a></li>
+<li><a href="https://jmbuhr.de" class="bi-house"></a></li>
+<li><a href="https://mastodon.online/@jmbuhr" class="bi-mastodon"></a></li>
+<li><a href="https://www.youtube.com/@jmbuhr" class="bi-youtube"></a></li>
+<li><a href="https://www.linkedin.com/in/jmbuhr/" class="bi-linkedin"></a></li>
+</ul>
+</div>
+</div>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-hallToolUsingBehaviorCalifornia1964" class="csl-entry" role="listitem">
 Hall, K. R. L., and George B. Schaller. 1964. <span>“Tool-<span>Using Behavior</span> of the <span>California Sea Otter</span>.”</span> <em>Journal of Mammalogy</em> 45 (2): 287–98. <a href="https://doi.org/10.2307/1376994">https://doi.org/10.2307/1376994</a>.
 </div>
 <div id="ref-millerMagicalNumberSeven1956a" class="csl-entry" role="listitem">
 Miller, George A. 1956. <span>“The Magical Number Seven, Plus or Minus Two: <span>Some</span> Limits on Our Capacity for Processing Information.”</span> <em>Psychological Review</em> 63 (2): 81–97. <a href="https://doi.org/10.1037/h0043158">https://doi.org/10.1037/h0043158</a>.
+</div>
+</div>
+</section></section>
+<section>
+<section id="backup-slides" class="title-slide slide level1 center">
+<h1>Backup Slides</h1>
+
+</section>
+<section id="aside-pure-functions" class="slide level2">
+<h2>Aside: Pure Functions</h2>
+<div class="cell" data-fig-height="3">
+<div class="cell-output-display">
+<div>
+<div>
+<svg width="960" height="288" viewbox="0.00 0.00 199.68 81.01" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 77.01)">
+<title>functions</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-77.01 195.68,-77.01 195.68,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.01" cy="-18.01" rx="18.02" ry="18.02"></ellipse>
+<text text-anchor="middle" x="18.01" y="-13.81" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="94.68" cy="-55.01" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="94.68" y="-50.81" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M34.48,-25.68C44.49,-30.64 57.75,-37.2 69.17,-42.87"></path>
+<polygon fill="black" stroke="black" points="67.72,-46.05 78.23,-47.35 70.82,-39.78 67.72,-46.05"></polygon>
+<text text-anchor="middle" x="56.35" y="-41.21" font-family="Times,serif" font-size="14.00">f</text>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="173.68" cy="-18.01" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="173.68" y="-13.81" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- A&#45;&gt;C -->
+<g id="edge3" class="edge">
+<title>A-&gt;C</title>
+<path fill="none" stroke="black" d="M36.12,-15.46C47.57,-13.88 63,-12.01 76.68,-11.21 92.66,-10.27 96.71,-10.31 112.68,-11.21 123.48,-11.82 135.32,-13.04 145.61,-14.29"></path>
+<polygon fill="black" stroke="black" points="145.3,-17.77 155.66,-15.56 146.18,-10.83 145.3,-17.77"></polygon>
+<text text-anchor="middle" x="94.68" y="-16.21" font-family="Times,serif" font-size="14.00">h</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M111.27,-47.52C121.81,-42.46 135.95,-35.66 148.01,-29.87"></path>
+<polygon fill="black" stroke="black" points="149.63,-32.97 157.12,-25.49 146.59,-26.66 149.63,-32.97"></polygon>
+<text text-anchor="middle" x="134.18" y="-41.21" font-family="Times,serif" font-size="14.00">g</text>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<p><span class="math display">\[
+g \circ f = h\
+\]</span></p>
+<div class="columns">
+<div class="column" style="width:;">
+<p><strong>pure</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>f <span class="ot">=</span> <span class="cf">function</span>(data, cutoff) {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  data <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="fu">filter</span>(x <span class="sc">&lt;</span> cutoff) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="fu">mutate</span>(<span class="at">x =</span> x <span class="sc">*</span> pi)</span>
+<span id="cb2-5"><a href="#cb2-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:;">
+<p>vs.&nbsp;<strong>Side Effects</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>f_prime <span class="ot">=</span> <span class="cf">function</span>(cutoff) {</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  data <span class="ot">&lt;&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>    <span class="fu">filter</span>(x <span class="sc">&lt;</span> cutoff) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="fu">mutate</span>(<span class="at">x =</span> x <span class="sc">*</span> pi)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div class="footer footer-default">
@@ -799,7 +889,6 @@ Miller, George A. 1956. <span>“The Magical Number Seven, Plus or Minus Two: <s
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1099,10 +1188,9 @@ Miller, George A. 1956. <span>“The Magical Number Seven, Plus or Minus Two: <s
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1112,8 +1200,17 @@ Miller, George A. 1956. <span>“The Magical Number Seven, Plus or Minus Two: <s
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

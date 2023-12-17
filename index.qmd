@@ -40,7 +40,7 @@ bibliography: ./references.bib
 nocite: ""
 execute:
   warning: false
-  eval: false
+  eval: true
   echo: true
 engine: knitr
 ---
@@ -67,7 +67,7 @@ library(palmerpenguins)
 :::{#quote}
 ![](./img/otter-pound.png){#otter-pound}
 
-> "The mean number of **blows** necessary **to open a mussel** was **35.5** (range 6–88, sd 20.4).\
+> "The mean number of **blows** necessary **to open a mussel** was **35.5** [...].\
 > The **same stone** was frequently **retained** for several successive food items, [...]"
 > 
 > --- @hallToolUsingBehaviorCalifornia1964
@@ -91,12 +91,9 @@ Image sources: <https://en.wikipedia.org/wiki/Tool_use_by_sea_otters>, <https://
 > 
 > --- ~~Abraham~~ Otterham Lincoln
 
-## Otters have a favorite Rock 🪨
-
+## Humans are toolmakers 🪓
 
 ![](./img/pexels-anna-urlapova-2957058.jpg){.fl width=38%}
-
-. . .
 
 :::{#textbox}
 **Humans** don't just **use** tools.
@@ -143,12 +140,11 @@ I love building and teaching tools 🧰
 
 ## The Tools Today 🧰
 
-
 ::: {.columns}
 ::: {.column width="30%"}
 ![](./img/quarto.png){width=100%}
 
-![](./img/targets.png){width=80%}
+![](./img/targets.png){width=50%}
 
 ![](./img/Neovim-logo.svg){width=100%}
 :::
@@ -224,7 +220,7 @@ But it has the **same number of letters** as the random letters.
 
 ## Quarto: Structure Thoughts
 
-:::{#tr}
+:::tr
 ![](./img/quarto.png)
 :::
 
@@ -238,7 +234,7 @@ An open-source scientific and technical publishing system.
   - web, pdf, docx, ppt ...
 - Fully **reproducible**
 
-## {background-image="./img/rstudio.png" background-size=contain}
+![](./img/rstudio.png){#rstudio}
 
 ## {background-image="./img/choose.png" background-size=70% background-position=top}
 
@@ -277,15 +273,13 @@ ggplot(airquality, aes(Temp, Ozone)) +
 
 ## Quarto: Structure Thoughts
 
-:::{#tr}
+:::tr
 ![](./img/quarto.png)
 :::
 
 :::sidenote
 🖥️📱📰
 :::
-
-### Why?
 
 - Why did I perform this operation?
   - Read a **detailed explanation** of past-me right next to the code!
@@ -294,16 +288,18 @@ ggplot(airquality, aes(Temp, Ozone)) +
 - Could you increase the fontsize in all your plots?
   - Sure, just **change** one number and **re-render**!
 
-### FAQ:
+. . .
 
 > "I have a machine learning model that takes 6 hours to calculate. [...] how do I put this in a Quarto notebook?"
+
+. . .
 
 Well, **don't!**
 
 ## Targets: Organize Workflows
 
-:::{#tr}
-![](./img/targets.png){width=60%}
+:::tr
+![](./img/targets.png){width=50%}
 :::
 
 <https://docs.ropensci.org/targets/>
@@ -318,45 +314,6 @@ targets::tar_visnetwork()
 
 Aim for **pure functions** that take **inputs** and produce **outputs**
 without side effects.
-
-## Aside: Pure Functions
-
-```{dot}
-//| echo: false
-digraph functions {
-  rankdir=LR;
-  node [shape=circle];
-  A -> B [label="f"];
-  B -> C [label="g"];
-  A -> C [label="h"];
-}
-```
-
-$$
-g \circ f = h\
-$$
-
-```{r}
-#| eval: false
-f = function(data, condition) {
-  data |>
-    filter(x > condition) |>
-    mutate(x = x * pi)
-}
-
-```
-
-vs. **Side Effects**
-
-```{r}
-#| eval: false
-f_prime = function(value) {
-  data <<- data |>
-    filter(x > 10) |>
-    mutate(x = x * pi)
-}
-```
-
 
 ## NeoVim: Not just for Speed!
 
@@ -378,9 +335,7 @@ f_prime = function(value) {
 
 Demo Time!
 
-## Penguins!
-
-![](./img/lter_penguins.png)
+![](./img/lter_penguins.png){width=80%}
 
 ::: {.aside}
 Artwork by \@allisonhorst
@@ -404,11 +359,73 @@ Find your favorite rock 🪨
 
 Sharpen the axe 🪓
 
-# Thank You!
+. . .
 
-## Thank You!
+Slides: <https://jmbuhr.de/2023-workflow>
+
+{{< qrcode https://github.com/jmbuhr.de/2023-workflow qr2 width=124 height=124 colorDark='#1E4287' >}}
+
+
+:::profile
+- \@jmbuhr
+- [](https://github.com/jmbuhr){.bi-github}
+- [](https://jmbuhr.de){.bi-house}
+- [](https://mastodon.online/@jmbuhr){.bi-mastodon}
+- [](https://www.youtube.com/@jmbuhr){.bi-youtube}
+- [](https://www.linkedin.com/in/jmbuhr/){.bi-linkedin}
+:::
 
 ## References
 
 :::{#refs}
 :::
+
+# Backup Slides
+
+## Aside: Pure Functions
+
+```{dot}
+//| echo: false
+//| fig-height: 3
+digraph functions {
+  rankdir=LR;
+  node [shape=circle];
+  A -> B [label="f"];
+  B -> C [label="g"];
+  A -> C [label="h"];
+}
+```
+
+$$
+g \circ f = h\
+$$
+
+
+::: {.columns}
+::: {.column width=""}
+**pure**
+
+```{r}
+#| eval: false
+f = function(data, cutoff) {
+  data |>
+    filter(x < cutoff) |>
+    mutate(x = x * pi)
+}
+
+```
+:::
+::: {.column width=""}
+vs. **Side Effects**
+
+```{r}
+#| eval: false
+f_prime = function(cutoff) {
+  data <<- data |>
+    filter(x < cutoff) |>
+    mutate(x = x * pi)
+}
+```
+:::
+:::
+

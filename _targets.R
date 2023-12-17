@@ -14,5 +14,5 @@ clean_data <- function(data) {
 # End this file with a list of target objects.
 list(
   tar_target(penguins, palmerpenguins::penguins),
-  tar_target(clean_penguins, clean_data(clean_penguins))
+  tar_target(clean_penguins, clean_data(penguins))
 )
