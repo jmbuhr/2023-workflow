@@ -211,14 +211,13 @@ But it has the **same number of letters** as the random letters.
 
 ## The Magic 7 ± 2
 
-::: {.incremental}
-- One piece of information is a **chunk**.
-- We can keep **7 chunks** in our **working memory** [@millerMagicalNumberSeven1956a].
-- We gain space by combining thoughts and **concepts**
-- Letters → 1 word
-- Words → sentence
-- Sentences → idea
-:::
+One piece of information is a **chunk**.
+
+We can keep **7** (± 2) **chunks** in our **working memory** [@millerMagicalNumberSeven1956a].
+
+We gain space by combining thoughts and **concepts**
+
+Letters → Words → Sentences → Concepts
 
 # Optimize Your Workflow
 
@@ -284,12 +283,14 @@ ggplot(airquality, aes(Temp, Ozone)) +
 🖥️📱📰
 :::
 
-- Why did I perform this operation?
-  - Read a **detailed explanation** of past-me right next to the code!
-- Different and changing output requirements?
+::: {.incremental}
+- **Why** did I perform this operation?
+  - Read a detailed **explanation** of past-me right **next** to the code!
+- Different and changing **output formats**?
   - Just let quarto **generate** them for you!
-- Could you increase the fontsize in all your plots?
+- Could you increase the fontsize in **all your plots**?
   - Sure, just **change** one number and **re-render**!
+:::
 
 . . .
 
@@ -337,11 +338,11 @@ without side effects.
 |
 |
 
-- modes:
+- modes
   - normal, insert, visual
-- verbs:
+- verbs
   - change, delete, paste etc.
-- nouns (text objects):
+- nouns (text objects)
   - word, sentence, paragraph, block, parenthesis, function etc.
 - movements
   - "to end of line", "to beggining of the document", "down 3 lines" etc.
@@ -361,7 +362,7 @@ Artwork by \@allisonhorst
 
 ## Take Home Messages
 
-Keyboard shortcuts are for thoughts ⌨️
+Keyboard shortcuts are for thoughts, not just speed ⌨️
 
 . . .
 
@@ -373,14 +374,13 @@ Find your favorite rock 🪨
 
 . . .
 
-Sharpen the axe 🪓
+And sharpen the axe 🪓
 
 . . .
 
 Slides: <https://jmbuhr.de/2023-workflow>
 
-{{< qrcode https://github.com/jmbuhr.de/2023-workflow qr2 width=124 height=124 colorDark='#1E4287' >}}
-
+{{< qrcode https://github.com/jmbuhr.de/2023-workflow qr2 width=200 height=200 colorDark='#1E4287' >}}
 
 :::profile
 - \@jmbuhr
