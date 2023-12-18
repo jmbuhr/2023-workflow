@@ -85,11 +85,15 @@ Image sources: <https://en.wikipedia.org/wiki/Tool_use_by_sea_otters>, <https://
 > 
 > --- Abraham Lincoln
 
+![](./img/abraham-lincoln.png)
+
 ## Otters have a favorite Rock 🪨
 
 > "Give me six minutes to open a mussel and I will spend the first four finding the perfect rock."
 > 
 > --- ~~Abraham~~ Otterham Lincoln
+
+![](./img/otterham-lincoln.png)
 
 ## Humans are toolmakers 🪓
 
@@ -228,7 +232,6 @@ But it has the **same number of letters** as the random letters.
 
 An open-source scientific and technical publishing system.
 
-- The successor of `Rmarkdown`, made by the same people
 - Keep **thoughts, code and results** close
 - Cater to different **output formats**
   - web, pdf, docx, ppt ...
@@ -330,6 +333,19 @@ without side effects.
 **Complicated operations** become one **chunk**.
 
 **Free up resources** for the important questions.
+
+|
+|
+
+- modes:
+  - normal, insert, visual
+- verbs:
+  - change, delete, paste etc.
+- nouns (text objects):
+  - word, sentence, paragraph, block, parenthesis, function etc.
+- movements
+  - "to end of line", "to beggining of the document", "down 3 lines" etc.
+
 
 # Demo
 
